@@ -1,0 +1,3 @@
+[workspace]
+
+members = [ "highest_scoring_word" ]
