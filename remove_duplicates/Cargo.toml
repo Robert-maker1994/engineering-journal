@@ -1,5 +1,5 @@
 [package]
-name = "highest_scoring_word"
+name = "remove_duplicates"
 version = "0.1.0"
 edition = "2021"
 
