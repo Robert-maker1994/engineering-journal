@@ -1,3 +1,3 @@
 # katas
 
-Work contains coding katas in rust
+Work contains coding katas in rust 
