@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "circular_deque"
+version = "0.1.0"
+
+[[package]]
 name = "codigo_morse"
 version = "0.1.0"
 dependencies = [
