@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "all_one_data_structure"
+version = "0.1.0"
+
+[[package]]
 name = "circular_deque"
 version = "0.1.0"
 
@@ -25,4 +29,8 @@ version = "0.1.0"
 
 [[package]]
 name = "remove_duplicates"
+version = "0.1.0"
+
+[[package]]
+name = "shopping_offers"
 version = "0.1.0"
