@@ -28,7 +28,7 @@ impl Solution {
     }
 }
 
-fn main() {
-   let s = Solution::shopping_offers(vec![2, 5], vec![vec![3, 0, 5], vec![1, 2, 10]], vec![3, 2]);
+// fn main() {
+//    let s = Solution::shopping_offers(vec![2, 5], vec![vec![3, 0, 5], vec![1, 2, 10]], vec![3, 2]);
     
-}
+// }

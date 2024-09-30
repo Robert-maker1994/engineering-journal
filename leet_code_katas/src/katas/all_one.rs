@@ -1,11 +1,10 @@
 use std::collections::HashMap;
 
-struct AllOne {
+pub struct AllOne {
     k: HashMap<String, i32>
 }
 
 impl AllOne {
-
     fn new() -> Self {
         AllOne {
             k: HashMap::new()
@@ -51,14 +50,3 @@ impl AllOne {
     }
 }
 
-
-fn main() {
-    let mut obj = AllOne::new();
-     obj.inc("hello".to_string());
-     obj.inc("hello".to_string());
-        obj.inc("world".to_string());
-     let ret_3: String = obj.get_max_key();
-     let ret_4: String = obj.get_min_key();
-    println!("max key {}", ret_3);
-    println!("min key {}", ret_4);
-}

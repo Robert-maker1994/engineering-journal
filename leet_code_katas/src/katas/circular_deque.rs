@@ -75,14 +75,13 @@ impl MyCircularDeque {
     }
 }
 
-fn main() {
-    let mut obj = MyCircularDeque::new(5);
-    let ret_1: bool = obj.insert_front(2);
-    let ret_2: bool = obj.insert_last(4);
-    let ret_3: bool = obj.delete_front();
-    let ret_4: bool = obj.delete_last();
-    let ret_5: i32 = obj.get_front();
-    let ret_6: i32 = obj.get_rear();
-    let ret_7: bool = obj.is_empty();
-    let ret_8: bool = obj.is_full();
-}
+//     let mut obj = MyCircularDeque::new(5);
+//     let ret_1: bool = obj.insert_front(2);
+//     let ret_2: bool = obj.insert_last(4);
+//     let ret_3: bool = obj.delete_front();
+//     let ret_4: bool = obj.delete_last();
+//     let ret_5: i32 = obj.get_front();
+//     let ret_6: i32 = obj.get_rear();
+//     let ret_7: bool = obj.is_empty();
+//     let ret_8: bool = obj.is_full();
+
