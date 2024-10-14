@@ -3,10 +3,7 @@ struct CustomStack {
     s: Vec<i32>,
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl CustomStack {
     fn new(capacity: i32) -> Self {
         CustomStack {
@@ -35,8 +32,6 @@ impl CustomStack {
         }
     }
 }
-
-//   Your CustomStack object will be instantiated and called as such:
 
 #[cfg(test)]
 mod tests {
