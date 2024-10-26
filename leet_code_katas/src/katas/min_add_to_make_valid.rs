@@ -1,7 +1,7 @@
 // Problem: Minimum Add to Make Parentheses Valid
 // Link: https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
 
-pub struct Solution;
+pub  
 
 impl Solution {
     pub fn min_add_to_make_valid(s: String) -> i32 {

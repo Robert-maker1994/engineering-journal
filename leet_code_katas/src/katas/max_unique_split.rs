@@ -1,4 +1,4 @@
-struct Solution;
+ 
 // We are going to folve this using backracking 
 impl Solution {
     fn backtrack(s: &str, set: &mut std::collections::HashSet<String>, max: &mut i32, start: usize) {

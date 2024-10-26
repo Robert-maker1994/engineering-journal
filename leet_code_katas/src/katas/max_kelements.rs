@@ -1,6 +1,5 @@
 use std::collections::BinaryHeap;
 
-struct Solution;
 
 impl Solution {
     pub fn max_kelements(nums: Vec<i32>, k: i32) -> i64 {
@@ -9,8 +8,6 @@ impl Solution {
     for &num in &nums {
         heap.push(num);
     }
-
-    println!("{:?}", heap);
 
     let mut score: i64 = 0;
     for _ in 0..k {
