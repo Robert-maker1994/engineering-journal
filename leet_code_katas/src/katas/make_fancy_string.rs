@@ -2,12 +2,11 @@ struct Solution;
 
 impl Solution {
     pub fn make_fancy_string(s: String) -> String {
-        let mut max = 1; // Start with 1 since the first character is always added
+        let mut max = 1; 
         let by = s.as_bytes();
         let mut result = String::new();
 
-        result.push(by[0] as char); // Add the first character to the result
-
+        result.push(by[0] as char);
         for i in 1..by.len() {
             if by[i] == by[i - 1] {
                 max += 1;
@@ -42,9 +41,4 @@ mod tests {
     fn make_fancy_string_3() {
         assert_eq!(Solution::make_fancy_string("aab".to_string()), "aab".to_string());
     }
-}
-
-fn main() {
-    let result = Solution::make_fancy_string("leeetcode".to_string());
-    println!("Result: {}", result); // Output should be "leetcode"
 }
