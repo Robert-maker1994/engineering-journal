@@ -1,7 +1,40 @@
 use std::ops::Index;
 
- 
-
+/// This function calculates the minimum cost to satisfy the shopping needs given the price of each item,
+/// special offers, and the required quantities of each item.
+///
+/// # Arguments
+///
+/// * `price` - A vector of integers where each element represents the price of an item.
+/// * `special` - A vector of vectors where each sub-vector represents a special offer. The first `n` elements
+///   of each sub-vector represent the quantities of each item in the offer, and the last element represents
+///   the price of the offer.
+/// * `needs` - A vector of integers where each element represents the required quantity of each item.
+///
+/// # Returns
+///
+/// * An integer representing the minimum cost to satisfy the shopping needs.
+///
+/// # Example
+///
+/// ```
+/// let price = vec![2, 5];
+/// let special = vec![vec![3, 0, 5], vec![1, 2, 10]];
+/// let needs = vec![3, 2];
+/// assert_eq!(Solution::shopping_offers(price, special, needs), 14);
+/// ```
+///
+/// # Explanation
+///
+/// The function uses a depth-first search (DFS) algorithm to explore all possible ways to satisfy the shopping needs.
+/// It starts by calculating the cost without any special offers. Then, it iterates through each special offer and checks
+/// if the offer can be applied (i.e., if the required quantities are greater than or equal to the quantities in the offer).
+/// If the offer can be applied, it recursively calculates the cost with the offer applied and updates the minimum cost.
+/// Finally, it returns the minimum cost.
+///
+/// The `dfs` function is a helper function that performs the DFS. It takes the price vector, the special offers vector,
+/// a mutable reference to the needs vector, and the current position in the special offers vector as arguments. It returns
+/// the minimum cost to satisfy the shopping needs from the current position onwards.
 impl Solution {
     pub fn shopping_offers(price: Vec<i32>, special: Vec<Vec<i32>>, needs: Vec<i32>) -> i32 {
         
@@ -27,8 +60,3 @@ impl Solution {
         dfs(&price, &special, &mut needs.clone(), 0)
     }
 }
-
-// fn main() {
-//    let s = Solution::shopping_offers(vec![2, 5], vec![vec![3, 0, 5], vec![1, 2, 10]], vec![3, 2]);
-    
-// }

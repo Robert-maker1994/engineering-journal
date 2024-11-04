@@ -1,5 +1,29 @@
 struct Solution;
 
+/// This function counts the number of square submatrices with all ones in a given binary matrix.
+/// 
+/// # Arguments
+/// 
+/// * `matrix` - A 2D vector of integers representing the binary matrix.
+/// 
+/// # Returns
+/// 
+/// * An integer representing the total number of square submatrices with all ones.
+/// 
+/// # Explanation
+/// 
+/// The function uses dynamic programming to solve the problem. It initializes a 2D vector `dp`
+/// of the same size as the input matrix to store the size of the largest square submatrix ending
+/// at each cell. It also initializes a counter `count` to keep track of the total number of such
+/// submatrices.
+/// 
+/// The function iterates over each cell in the matrix. If the cell contains a 1, it updates the
+/// corresponding cell in the `dp` vector. If the cell is not on the first row or first column,
+/// it adds the minimum value among the top, left, and top-left diagonal cells in the `dp` vector
+/// to the current cell. This ensures that only square submatrices are counted.
+/// 
+/// Finally, the function adds the value of the current cell in the `dp` vector to the `count`
+/// and returns the total count.
 impl Solution {
     pub fn count_squares(matrix: Vec<Vec<i32>>) -> i32 {
         let m = matrix.len();

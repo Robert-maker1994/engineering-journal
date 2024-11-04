@@ -1,4 +1,32 @@
 
+/// Divides players into pairs such that the sum of skills in each pair is equal,
+/// and calculates the total chemistry of the pairs.
+///
+/// # Arguments
+///
+/// * `skill` - A vector of integers representing the skill levels of the players.
+///
+/// # Returns
+///
+/// * `i64` - The total chemistry of the pairs if all pairs have the same sum of skills,
+///           otherwise returns -1.
+///
+/// # Explanation
+///
+/// The function first sorts the skill levels in ascending order. It then calculates the target
+/// skill sum by adding the smallest and largest skill levels. The function iterates through the
+/// first half of the sorted skill levels, pairing each element with its corresponding element
+/// from the second half. If any pair does not sum to the target skill, the function returns -1.
+/// Otherwise, it calculates the total chemistry by multiplying the skill levels of each pair
+/// and summing these products.
+///
+/// # Example
+///
+/// ```
+/// let skills = vec![1, 2, 3, 4, 5, 6];
+/// let result = Solution::divide_players(skills);
+/// assert_eq!(result, 44); // Example result
+/// ```
 impl Solution {
     pub fn divide_players(skill: Vec<i32>) -> i64 {
         let mut skill = skill;

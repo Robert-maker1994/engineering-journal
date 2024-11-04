@@ -1,3 +1,28 @@
+/// Transforms the given array into its rank array.
+///
+/// The rank array is defined such that each element in the original array is replaced by its rank.
+/// The rank of an element is its position in the sorted array, starting from 1. If two elements are equal,
+/// they receive the same rank.
+///
+/// # Arguments
+///
+/// * `arr` - A vector of integers to be transformed into its rank array.
+///
+/// # Returns
+///
+/// A vector of integers representing the rank array.
+///
+/// # Example
+///
+/// ```
+/// let arr = vec![40, 10, 20, 30];
+/// let result = Solution::array_rank_transform(arr);
+/// assert_eq!(result, vec![4, 1, 2, 3]);
+/// ```
+///
+/// # Panics
+///
+/// This function will panic if the input vector contains elements that cannot be compared or if the input vector is empty.
 impl Solution {
     pub fn array_rank_transform(arr: Vec<i32>) -> Vec<i32> {
         let mut sorted_arr = arr.clone();

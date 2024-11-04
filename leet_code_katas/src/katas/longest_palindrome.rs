@@ -2,8 +2,34 @@ use std::vec;
 
 pub struct Solution;
 
-
-// A palidormic substring is a substring that reads the same forwards and backwards.
+/// This function finds the longest palindromic substring in a given string `s`.
+///
+/// # Arguments
+///
+/// * `s` - A `String` input for which the longest palindromic substring is to be found.
+///
+/// # Returns
+///
+/// * A `String` representing the longest palindromic substring in the input string.
+///
+/// # Explanation
+///
+/// The function uses dynamic programming to solve the problem. It maintains a 2D vector `dp`
+/// where `dp[i][j]` is `true` if the substring `s[i..=j]` is a palindrome. The function iterates
+/// over all possible substrings and updates the `dp` table accordingly. It also keeps track of
+/// the starting index and the maximum length of the longest palindromic substring found so far.
+///
+/// The algorithm works as follows:
+/// 1. Initialize a 2D vector `dp` with `false` values.
+/// 2. Set `dp[i][i]` to `true` for all `i` because a single character is always a palindrome.
+/// 3. Iterate over the string in reverse order to ensure that when checking substring `s[i..=j]`,
+///    the values for `dp[i+1][j-1]` are already computed.
+/// 4. For each pair of indices `(i, j)`, if `s[i] == s[j]` and the substring `s[i+1..=j-1]` is a
+///    palindrome (or `j - i == 1` which means the substring length is 2), then `s[i..=j]` is a
+///    palindrome. Update the `dp` table and check if this palindrome is the longest found so far.
+/// 5. Finally, extract the longest palindromic substring using the starting index and maximum length.
+///
+/// The function returns the longest palindromic substring as a `String`.
 impl Solution {
     pub fn longest_palindrome(s: String) -> String {
         let s = s.as_bytes();
@@ -38,39 +64,6 @@ impl Solution {
     }
 }
 
-// impl Solution {
-//     pub fn is_palidormic_substring(s: &str) -> bool {
-//         let s = s.as_bytes();
-//         let mut left = 0;
-//         let mut right = s.len() - 1;
-
-//         while left < right {
-//             if s[left] != s[right] {
-//                 return false;
-//             }
-//             left += 1;
-//             right -= 1;
-//         }
-//         true
-//     }
-
-//     pub fn longest_palindrome(s: String) -> String {
-//         let s = s.as_bytes();
-//         let mut p = vec![];
-
-//         for i in 0..s.len() {
-//             for j in i..s.len() {
-//                 if Solution::is_palidormic_substring(std::str::from_utf8(&s[i..=j]).unwrap()) {
-//                     if &s[i..=j].len() > &p.len() {
-//                         p = s[i..=j].to_vec();
-
-//                     }
-//                 }
-//             }
-//         }
-//         p.to_vec().iter().map(|&c| c as char).collect()
-//     }
-// }
 
 #[cfg(test)]
 mod tests {

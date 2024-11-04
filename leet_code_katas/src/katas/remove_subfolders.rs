@@ -1,4 +1,44 @@
-
+/// Removes subfolders from a list of folder paths.
+/// 
+/// This function takes a vector of folder paths and removes any subfolders, 
+/// returning a vector of the remaining folders. The algorithm works as follows:
+/// 
+/// 1. Sort the folder paths lexicographically. This ensures that any subfolder 
+///    will appear immediately after its parent folder in the sorted list.
+/// 2. Initialize an empty vector `result` to store the final list of folders.
+/// 3. Set `current_parent` to the first folder in the sorted list.
+/// 4. Iterate through the sorted list of folders:
+///    - For each folder `f`, check if it starts with the `current_parent` followed by a `/`.
+///    - If it does not, it means `f` is not a subfolder of `current_parent`.
+///    - Add `f` to the `result` vector and update `current_parent` to `f`.
+/// 
+/// The function returns the `result` vector containing the folders with subfolders removed.
+/// 
+/// # Arguments
+/// 
+/// * `folder` - A vector of strings representing folder paths.
+/// 
+/// # Returns
+/// 
+/// * A vector of strings representing the folders with subfolders removed.
+/// 
+/// # Example
+/// 
+/// ```
+/// let folders = vec![
+///     String::from("/a"),
+///     String::from("/a/b"),
+///     String::from("/c/d"),
+///     String::from("/c/d/e"),
+///     String::from("/c/f"),
+/// ];
+/// let result = Solution::remove_subfolders(folders);
+/// assert_eq!(result, vec![
+///     String::from("/a"),
+///     String::from("/c/d"),
+///     String::from("/c/f"),
+/// ]);
+/// ```
 impl Solution {
     pub fn remove_subfolders(folder: Vec<String>) -> Vec<String> {
         let mut folder = folder;

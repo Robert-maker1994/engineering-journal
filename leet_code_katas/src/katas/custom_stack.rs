@@ -4,6 +4,21 @@ struct CustomStack {
 }
 
 
+/// A custom stack implementation with a fixed capacity.
+///
+/// # Methods
+///
+/// - `new(capacity: i32) -> Self`:
+///   Creates a new `CustomStack` with the specified capacity.
+///
+/// - `push(&mut self, x: i32)`:
+///   Pushes an element `x` onto the stack if the stack is not full.
+///
+/// - `pop(&mut self) -> i32`:
+///   Pops the top element from the stack and returns it. Returns `-1` if the stack is empty.
+///
+/// - `increment(&mut self, k: i32, val: i32)`:
+///   Increments the bottom `k` elements of the stack by `val`. If `k` is greater than the number of elements in the stack, all elements are incremented.
 impl CustomStack {
     fn new(capacity: i32) -> Self {
         CustomStack {
