@@ -1,7 +1,0 @@
-[package]
-name = "codigo_morse"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-morse_code = "0.0.0"
