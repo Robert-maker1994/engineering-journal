@@ -1,5 +1,5 @@
 
-struct CustomStack {
+pub struct CustomStack {
     s: Vec<i32>,
 }
 
@@ -20,7 +20,7 @@ struct CustomStack {
 /// - `increment(&mut self, k: i32, val: i32)`:
 ///   Increments the bottom `k` elements of the stack by `val`. If `k` is greater than the number of elements in the stack, all elements are incremented.
 impl CustomStack {
-    fn new(capacity: i32) -> Self {
+fn new(capacity: i32) -> Self {
         CustomStack {
             s: Vec::with_capacity(capacity.try_into().unwrap()),
         }

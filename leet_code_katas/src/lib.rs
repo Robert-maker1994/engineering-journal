@@ -1,1 +1,3 @@
-struct Solution;
+pub mod katas;
+use katas::solution::Solution;
+

@@ -1,5 +1,7 @@
 use std::ops::Index;
+use super::solution::Solution;
 
+impl Solution {
 /// This function calculates the minimum cost to satisfy the shopping needs given the price of each item,
 /// special offers, and the required quantities of each item.
 ///
@@ -15,14 +17,7 @@ use std::ops::Index;
 ///
 /// * An integer representing the minimum cost to satisfy the shopping needs.
 ///
-/// # Example
-///
-/// ```
-/// let price = vec![2, 5];
-/// let special = vec![vec![3, 0, 5], vec![1, 2, 10]];
-/// let needs = vec![3, 2];
-/// assert_eq!(Solution::shopping_offers(price, special, needs), 14);
-/// ```
+
 ///
 /// # Explanation
 ///
@@ -35,7 +30,6 @@ use std::ops::Index;
 /// The `dfs` function is a helper function that performs the DFS. It takes the price vector, the special offers vector,
 /// a mutable reference to the needs vector, and the current position in the special offers vector as arguments. It returns
 /// the minimum cost to satisfy the shopping needs from the current position onwards.
-impl Solution {
     pub fn shopping_offers(price: Vec<i32>, special: Vec<Vec<i32>>, needs: Vec<i32>) -> i32 {
         
         fn dfs(price: &Vec<i32>, special: &Vec<Vec<i32>>, needs: &mut Vec<i32>, pos: usize) -> i32 {

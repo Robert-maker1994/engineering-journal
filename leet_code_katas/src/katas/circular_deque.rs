@@ -2,13 +2,9 @@ struct MyCircularDeque {
     q: Vec<i32>,
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
-
 impl MyCircularDeque {
-    fn new(k: i32) -> Self {
+
+     fn new(k: i32) -> Self {
         MyCircularDeque {
             q: Vec::with_capacity(k as usize),
         }
@@ -58,7 +54,7 @@ impl MyCircularDeque {
         }
         self.q[0]
     }
-
+    
     fn get_rear(&self) -> i32 {
         if self.is_empty() {
             return -1;
@@ -75,13 +71,4 @@ impl MyCircularDeque {
     }
 }
 
-//     let mut obj = MyCircularDeque::new(5);
-//     let ret_1: bool = obj.insert_front(2);
-//     let ret_2: bool = obj.insert_last(4);
-//     let ret_3: bool = obj.delete_front();
-//     let ret_4: bool = obj.delete_last();
-//     let ret_5: i32 = obj.get_front();
-//     let ret_6: i32 = obj.get_rear();
-//     let ret_7: bool = obj.is_empty();
-//     let ret_8: bool = obj.is_full();
 

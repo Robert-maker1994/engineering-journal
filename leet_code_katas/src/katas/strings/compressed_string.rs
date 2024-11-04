@@ -1,27 +1,28 @@
+use super::solution::Solution;
 
-/// Compresses a given string by counting consecutive characters and 
-/// appending the count followed by the character to the result string.
-/// 
-/// # Arguments
-/// 
-/// * `word` - A `String` that represents the input word to be compressed.
-/// 
-/// # Returns
-/// 
-/// A `String` that contains the compressed version of the input word.
-/// 
-/// # Example
-/// 
-/// ```
-/// let result = Solution::compressed_string("aaabbc".to_string());
-/// assert_eq!(result, "3a2b1c");
-/// ```
-/// 
-/// # Notes
-/// 
-/// - The function limits the count of consecutive characters to 9.
-/// - If a character appears more than 9 times consecutively, it will be split into multiple counts.
 impl Solution {
+    /// Compresses a given string by counting consecutive characters and 
+    /// appending the count followed by the character to the result string.
+    /// 
+    /// # Arguments
+    /// 
+    /// * `word` - A `String` that represents the input word to be compressed.
+    /// 
+    /// # Returns
+    /// 
+    /// A `String` that contains the compressed version of the input word.
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// let result = Solution::compressed_string("aaabbc".to_string());
+    /// assert_eq!(result, "3a2b1c");
+    /// ```
+    /// 
+    /// # Notes
+    /// 
+    /// - The function limits the count of consecutive characters to 9.
+    /// - If a character appears more than 9 times consecutively, it will be split into multiple counts.
     pub fn compressed_string(word: String) -> String {
         let mut comp = String::new();
         let mut chars = word.chars().peekable();

@@ -1,5 +1,5 @@
-struct Solution;
-
+use super::solution::Solution;
+impl Solution {
 /// This function counts the number of square submatrices with all ones in a given binary matrix.
 /// 
 /// # Arguments
@@ -24,7 +24,6 @@ struct Solution;
 /// 
 /// Finally, the function adds the value of the current cell in the `dp` vector to the `count`
 /// and returns the total count.
-impl Solution {
     pub fn count_squares(matrix: Vec<Vec<i32>>) -> i32 {
         let m = matrix.len();
         let n = matrix[0].len();

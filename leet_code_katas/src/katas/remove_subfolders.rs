@@ -1,3 +1,7 @@
+use super::solution::Solution;
+
+impl Solution {
+
 /// Removes subfolders from a list of folder paths.
 /// 
 /// This function takes a vector of folder paths and removes any subfolders, 
@@ -22,24 +26,8 @@
 /// 
 /// * A vector of strings representing the folders with subfolders removed.
 /// 
-/// # Example
-/// 
-/// ```
-/// let folders = vec![
-///     String::from("/a"),
-///     String::from("/a/b"),
-///     String::from("/c/d"),
-///     String::from("/c/d/e"),
-///     String::from("/c/f"),
-/// ];
-/// let result = Solution::remove_subfolders(folders);
-/// assert_eq!(result, vec![
-///     String::from("/a"),
-///     String::from("/c/d"),
-///     String::from("/c/f"),
-/// ]);
-/// ```
-impl Solution {
+
+
     pub fn remove_subfolders(folder: Vec<String>) -> Vec<String> {
         let mut folder = folder;
         folder.sort();
@@ -58,7 +46,6 @@ impl Solution {
         result
         }
 }
-
 
 
 #[cfg(test)]

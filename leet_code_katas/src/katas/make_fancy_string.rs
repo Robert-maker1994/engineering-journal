@@ -1,13 +1,12 @@
-struct Solution;
-
-/// This function takes a string `s` and returns a "fancy" version of it.
-/// A "fancy" string is defined as a string where no three consecutive characters are the same.
-///
-/// # Arguments
-///
-/// * `s` - A string input that needs to be transformed into a fancy string.
-///
+use super::solution::Solution;
 impl Solution {
+
+    /// This function takes a string `s` and returns a "fancy" version of it.
+    /// A "fancy" string is defined as a string where no three consecutive characters are the same.
+    ///
+    /// # Arguments
+    ///
+    /// * `s` - A string input that needs to be transformed into a fancy string.
     pub fn make_fancy_string(s: String) -> String {
         let mut max = 1; 
         let by = s.as_bytes();

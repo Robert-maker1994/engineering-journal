@@ -1,10 +1,12 @@
 use std::collections::HashMap;
 
 pub struct AllOne {
+    #[warn(dead_code)]
     k: HashMap<String, i32>
 }
 
 impl AllOne {
+    #[warn(dead_code)]
     fn new() -> Self {
         AllOne {
             k: HashMap::new()

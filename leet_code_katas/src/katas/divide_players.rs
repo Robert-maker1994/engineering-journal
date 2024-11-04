@@ -1,3 +1,5 @@
+use super::solution::Solution;
+impl Solution {
 
 /// Divides players into pairs such that the sum of skills in each pair is equal,
 /// and calculates the total chemistry of the pairs.
@@ -20,14 +22,7 @@
 /// Otherwise, it calculates the total chemistry by multiplying the skill levels of each pair
 /// and summing these products.
 ///
-/// # Example
-///
-/// ```
-/// let skills = vec![1, 2, 3, 4, 5, 6];
-/// let result = Solution::divide_players(skills);
-/// assert_eq!(result, 44); // Example result
-/// ```
-impl Solution {
+
     pub fn divide_players(skill: Vec<i32>) -> i64 {
         let mut skill = skill;
         skill.sort();

@@ -1,33 +1,34 @@
 use std::collections::HashMap;
+use super::solution::Solution;
 
-/// Finds the minimum length of a contiguous subarray that, when removed, 
-/// makes the sum of the remaining elements divisible by `p`.
-///
-/// # Arguments
-///
-/// * `nums` - A vector of integers representing the array.
-/// * `p` - An integer by which the sum of the remaining elements should be divisible.
-///
-/// # Returns
-///
-/// Returns the length of the smallest subarray that can be removed to achieve the goal.
-/// If no such subarray exists, returns -1.
-///
-/// # Explanation
-///
-/// The function first calculates the total sum of the array and finds the remainder 
-/// when this sum is divided by `p`. If the remainder is 0, the entire array sum is 
-/// already divisible by `p`, so the function returns 0.
-///
-/// It then uses a HashMap to keep track of the prefix sums modulo `p` and their indices.
-/// As it iterates through the array, it calculates the current prefix sum and its 
-/// modulo `p`. It then determines the target modulo value that would make the 
-/// remaining sum divisible by `p` if the current subarray is removed.
-///
-/// If this target modulo value has been seen before, it updates the minimum length 
-/// of the subarray that can be removed. Finally, it returns the minimum length found, 
-/// or -1 if no such subarray exists.
 impl Solution {
+    /// Finds the minimum length of a contiguous subarray that, when removed, 
+    /// makes the sum of the remaining elements divisible by `p`.
+    ///
+    /// # Arguments
+    ///
+    /// * `nums` - A vector of integers representing the array.
+    /// * `p` - An integer by which the sum of the remaining elements should be divisible.
+    ///
+    /// # Returns
+    ///
+    /// Returns the length of the smallest subarray that can be removed to achieve the goal.
+    /// If no such subarray exists, returns -1.
+    ///
+    /// # Explanation
+    ///
+    /// The function first calculates the total sum of the array and finds the remainder 
+    /// when this sum is divided by `p`. If the remainder is 0, the entire array sum is 
+    /// already divisible by `p`, so the function returns 0.
+    ///
+    /// It then uses a HashMap to keep track of the prefix sums modulo `p` and their indices.
+    /// As it iterates through the array, it calculates the current prefix sum and its 
+    /// modulo `p`. It then determines the target modulo value that would make the 
+    /// remaining sum divisible by `p` if the current subarray is removed.
+    ///
+    /// If this target modulo value has been seen before, it updates the minimum length 
+    /// of the subarray that can be removed. Finally, it returns the minimum length found, 
+    /// or -1 if no such subarray exists.
     pub fn min_subarray(nums: Vec<i32>, p: i32) -> i32 {
         let total_sum: i64 = nums.iter().map(|&num| num as i64).sum();
         let rem = total_sum % p as i64;

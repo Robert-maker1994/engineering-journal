@@ -1,6 +1,21 @@
- 
-
+use super::solution::Solution;
 impl Solution {
+/// Determines if the array can be rearranged such that the sum of every pair of elements is divisible by `k`.
+///
+/// # Arguments
+///
+/// * `arr` - A vector of integers.
+/// * `k` - An integer by which the sum of pairs should be divisible.
+///
+/// # Returns
+///
+/// * `true` if the array can be rearranged to satisfy the condition, otherwise `false`.
+///
+/// # Explanation
+///
+/// The function first calculates the frequency of each remainder when the elements of the array are divided by `k`.
+/// It then checks if the frequency of elements with a remainder of 0 is even, as these elements need to pair among themselves.
+/// For other remainders, it checks if the frequency of a remainder `i` matches the frequency of its complement `k - i`.
     pub fn can_arrange(arr: Vec<i32>, k: i32) -> bool {
         let mut mod_freq = vec![0; k as usize];
 

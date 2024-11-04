@@ -1,5 +1,8 @@
 use std::rc::Rc;
 use std::cell::RefCell;
+use super::solution::Solution;
+use super::tree_node::TreeNode;
+impl Solution {
 // DFS, or Depth-First Search, is a fundamental algorithm used to traverse or search through tree or graph data structures. The algorithm starts at the root (or an arbitrary node in the case of a graph) and explores as far as possible along each branch before backtracking. There are two primary ways to implement DFS: recursively and iteratively (using a stack).
 
 // Key Characteristics of DFS
@@ -15,26 +18,6 @@ use std::cell::RefCell;
 // Example of DFS in Rust
 // Here is an example of how DFS can be implemented in Rust for a binary tree:
 // Definition for a binary tree node
-#[derive(Debug, Clone)]
-struct TreeNode {
-    val: i32,
-    left: Option<Rc<RefCell<TreeNode>>>,
-    right: Option<Rc<RefCell<TreeNode>>>,
-
-}
-
-impl TreeNode {
-    fn new(val: i32) -> Rc<RefCell<TreeNode>> {
-        Rc::new(RefCell::new(TreeNode {
-            val,
-            left: None,
-            right: None,
-        }))
-    }
-}
- 
-
-impl Solution {
     pub fn replace_with_cousin_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
         let mut depth_sum = Vec::new();
 
