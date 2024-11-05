@@ -20,3 +20,4 @@ pub mod reverse_num;
 pub mod shopping_offers;
 pub mod solution;
 pub mod tree_node;
+pub mod strings;

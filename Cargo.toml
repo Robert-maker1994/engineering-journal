@@ -1,3 +1,3 @@
 [workspace]
 
-members = [  "codigo_morse", "leet_code_katas", "novato"]
+members = [  "leet_code_katas" ]
