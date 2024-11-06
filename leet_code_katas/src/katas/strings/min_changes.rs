@@ -1,5 +1,3 @@
-use std::{ops::Index, vec};
-
 use crate::katas::solution::Solution;
 
 impl Solution {
