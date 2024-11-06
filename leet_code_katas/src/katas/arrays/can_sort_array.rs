@@ -10,34 +10,36 @@ impl Solution {
     /// set bits
     /// . You are allowed to do this operation any number of times (including zero).
     /// Return true if you can sort the array, else return false.
+    /// 
+    /// Solution: 
+    /// Check if the array is already sorted
+    /// Group numbers by the count of 1's in their binary representation
+    /// Sort each group individually
+    /// Merge the sorted groups back into the nums array
+    /// Check if the array is sorted
         pub fn can_sort_array(nums: Vec<i32>) -> bool {
-           // Check if the array is already sorted
         if nums.windows(2).all(|w| w[0] <= w[1]) {
             return true;
         }
 
         let mut groups: std::collections::HashMap<u32, Vec<i32>> = std::collections::HashMap::new();
 
-        // Group numbers by the count of 1's in their binary representation
         for &num in &nums {
             let count_ones = num.count_ones();
             groups.entry(count_ones).or_insert(Vec::new()).push(num);
         }
 
-        // Sort each group individually
         for group in groups.values_mut() {
             group.sort();
         }
 
-        // Merge the sorted groups back into the nums array
         let mut sorted_nums: Vec<i32> = Vec::with_capacity(nums.len());
         for count_ones in 0..=32 {
             if let Some(group) = groups.get(&count_ones) {
                 sorted_nums.extend(group);
             }
         }
-        println!("sorted_nums {:?}", sorted_nums);
-        // Check if the array is sorted
+
         sorted_nums.windows(2).all(|w| w[0] <= w[1])
     }
 }
