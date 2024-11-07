@@ -27,7 +27,7 @@ impl Solution {
             if (i - start) % 2 != 0 {
                 odd.push(count);
             }
-
+            
             count += 1;
             start = i;
             i += 1;

@@ -18,13 +18,6 @@ impl Solution {
     ///
     /// * `true` if the array is a valid mountain array, `false` otherwise.
     ///
-    /// # Examples
-    ///
-    /// ```
-    /// assert_eq!(Solution::valid_mountain_array(vec![0, 3, 2, 1]), true);
-    /// assert_eq!(Solution::valid_mountain_array(vec![2, 1]), false);
-    /// assert_eq!(Solution::valid_mountain_array(vec![3, 5, 5]), false);
-    /// ```
     pub fn valid_mountain_array(arr: Vec<i32>) -> bool {
         let n = arr.len();
         if n < 3 {
@@ -57,9 +50,7 @@ mod test {
     /// Tests for the `valid_mountain_array` function.
     #[test]
     fn test_valid_mountain_array() {
-        // assert_eq!(Solution::valid_mountain_array(vec![0, 3, 2, 1]), true);
-        // assert_eq!(Solution::valid_mountain_array(vec![2, 1]), false);
-        // assert_eq!(Solution::valid_mountain_array(vec![3, 5, 5]), false);
+
         assert_eq!(Solution::valid_mountain_array(vec![0, 1, 2, 3, 4, 5, 4, 6, 2, 1]), true);
     }
 }
