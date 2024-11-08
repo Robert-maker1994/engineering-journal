@@ -1,8 +1,9 @@
 use std::rc::Rc;
 use std::cell::RefCell;
-use super::solution::Solution;
-use super::tree_node::TreeNode;
-impl Solution {
+use super::DFS;
+use crate::katas::tree_node::TreeNode;
+
+impl DFS {
 // DFS, or Depth-First Search, is a fundamental algorithm used to traverse or search through tree or graph data structures. The algorithm starts at the root (or an arbitrary node in the case of a graph) and explores as far as possible along each branch before backtracking. There are two primary ways to implement DFS: recursively and iteratively (using a stack).
 
 // Key Characteristics of DFS

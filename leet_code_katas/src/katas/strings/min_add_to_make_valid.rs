@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::Strings;
 
-impl Solution {
+impl Strings {
     /// This function calculates the minimum number of parentheses that need to be added 
     /// to make a given string of parentheses valid. A string of parentheses is considered 
     /// valid if every opening parenthesis '(' has a corresponding closing parenthesis ')'.
@@ -58,20 +58,20 @@ mod tests {
     fn test_1() {
         let s = "())".to_string();
         let res = 1;
-        assert_eq!(Solution::min_add_to_make_valid(s), res);
+        assert_eq!(Strings::min_add_to_make_valid(s), res);
     }
 
     #[test]
     fn test_2() {
         let s = "(((".to_string();
         let res = 3;
-        assert_eq!(Solution::min_add_to_make_valid(s), res);
+        assert_eq!(Strings::min_add_to_make_valid(s), res);
     }
 
     #[test]
     fn test_3() {
         let s = "()".to_string();
         let res = 0;
-        assert_eq!(Solution::min_add_to_make_valid(s), res);
+        assert_eq!(Strings::min_add_to_make_valid(s), res);
     }
 }

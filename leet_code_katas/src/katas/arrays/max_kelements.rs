@@ -1,7 +1,7 @@
 use std::collections::BinaryHeap;
-use super::solution::Solution;
+use super::Arrays;
 
-impl Solution {
+impl Arrays {
     /// This function calculates the maximum possible score by performing the following operations:
     /// 1. Insert all elements of the input vector `nums` into a max-heap.
     /// 2. For `k` iterations, do the following:
@@ -54,9 +54,9 @@ mod tests {
 
     #[test]
     fn test_max_kelements() {
-        assert_eq!(Solution::max_kelements(vec![10, 10, 10, 10, 10], 5), 50);
-        assert_eq!(Solution::max_kelements(vec![1,10,3,3,3], 3), 17);
-        assert_eq!(Solution::max_kelements(vec![9, 8, 7, 6, 5], 3), 24);    
+        assert_eq!(Arrays::max_kelements(vec![10, 10, 10, 10, 10], 5), 50);
+        assert_eq!(Arrays::max_kelements(vec![1,10,3,3,3], 3), 17);
+        assert_eq!(Arrays::max_kelements(vec![9, 8, 7, 6, 5], 3), 24);    
     }
 
 }

@@ -3,7 +3,6 @@ pub struct _CustomStack {
     _s: Vec<i32>,
 }
 
-
 /// A custom stack implementation with a fixed capacity.
 ///
 /// # Methods

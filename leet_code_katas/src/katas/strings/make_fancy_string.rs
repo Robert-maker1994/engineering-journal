@@ -1,5 +1,5 @@
-use super::solution::Solution;
-impl Solution {
+use super::Strings;
+impl Strings {
 
     /// This function takes a string `s` and returns a "fancy" version of it.
     /// A "fancy" string is defined as a string where no three consecutive characters are the same.
@@ -35,16 +35,16 @@ mod tests {
 
     #[test]
     fn make_fancy_string_1() {
-        assert_eq!(Solution::make_fancy_string("leeetcode".to_string()), "leetcode".to_string());
+        assert_eq!(Strings::make_fancy_string("leeetcode".to_string()), "leetcode".to_string());
     }
 
     #[test]
     fn make_fancy_string_2() {
-        assert_eq!(Solution::make_fancy_string("aaabaaaa".to_string()), "aabaa".to_string());
+        assert_eq!(Strings::make_fancy_string("aaabaaaa".to_string()), "aabaa".to_string());
     }
 
     #[test]
     fn make_fancy_string_3() {
-        assert_eq!(Solution::make_fancy_string("aab".to_string()), "aab".to_string());
+        assert_eq!(Strings::make_fancy_string("aab".to_string()), "aab".to_string());
     }
 }

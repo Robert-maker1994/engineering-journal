@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::Arrays;
 
-impl Solution { 
+impl Arrays { 
     /// This function finds the median of two sorted arrays.
     /// 
     /// # Arguments

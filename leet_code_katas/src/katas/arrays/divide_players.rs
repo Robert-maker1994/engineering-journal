@@ -1,6 +1,6 @@
-use super::solution::Solution;
-impl Solution {
+use super::Arrays;
 
+impl Arrays {
 /// Divides players into pairs such that the sum of skills in each pair is equal,
 /// and calculates the total chemistry of the pairs.
 ///
@@ -21,21 +21,16 @@ impl Solution {
 /// from the second half. If any pair does not sum to the target skill, the function returns -1.
 /// Otherwise, it calculates the total chemistry by multiplying the skill levels of each pair
 /// and summing these products.
-///
-
     pub fn divide_players(skill: Vec<i32>) -> i64 {
         let mut skill = skill;
         skill.sort();
         let n = skill.len();
         let target_skill = skill[0] + skill[n - 1];
         let mut total_chemistry = 0;
-    
-        println!("Sorted skills: {:?}", skill);
-        println!("Target skill: {}", target_skill);
+
     
         for i in 0..n / 2 {
             let pair_sum = skill[i] + skill[n - 1 - i];
-            println!("Pair: ({}, {}), Pair sum: {}", skill[i], skill[n - 1 - i], pair_sum);
     
             if pair_sum != target_skill {
                 return -1;
@@ -56,14 +51,14 @@ mod tests {
     fn test_1() {
         let skill = vec![3,4];
         let res = 12;
-        assert_eq!(Solution::divide_players(skill), res);
+        assert_eq!(Arrays::divide_players(skill), res);
     }
 
     #[test]
     fn test_2() {
         let skill = vec![3,2,5,1,3,4];
         let res = 22;
-        assert_eq!(Solution::divide_players(skill), res);
+        assert_eq!(Arrays::divide_players(skill), res);
 
     }
 
@@ -71,7 +66,7 @@ mod tests {
     fn test_3() {
         let skill = vec![1,1,2,3];
         let res = -1;
-        assert_eq!(Solution::divide_players(skill), res);
+        assert_eq!(Arrays::divide_players(skill), res);
     }
 }
 

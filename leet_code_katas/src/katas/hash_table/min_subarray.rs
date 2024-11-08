@@ -1,7 +1,7 @@
 use std::collections::HashMap;
-use super::solution::Solution;
+use super::HashTable;
 
-impl Solution {
+impl HashTable {
     /// Finds the minimum length of a contiguous subarray that, when removed, 
     /// makes the sum of the remaining elements divisible by `p`.
     ///
@@ -69,20 +69,20 @@ mod tests {
     fn test_1() {
         let nums = vec![3, 1, 4, 2];
         let p = 6;
-        assert_eq!(Solution::min_subarray(nums, p), 1);
+        assert_eq!(HashTable::min_subarray(nums, p), 1);
     }
 
     #[test]
     fn test_2() {
         let nums = vec![6, 3, 5, 2];
         let p = 9;
-        assert_eq!(Solution::min_subarray(nums, p), 2);
+        assert_eq!(HashTable::min_subarray(nums, p), 2);
     }
 
     #[test]
     fn test_3() {
         let nums = vec![1, 2, 3];
         let p = 3;
-        assert_eq!(Solution::min_subarray(nums, p), 0);
+        assert_eq!(HashTable::min_subarray(nums, p), 0);
     }
 }

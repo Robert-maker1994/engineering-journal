@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::HashTable;
 
-impl Solution {
+impl HashTable {
 /// Transforms the given array into its rank array.
 ///
 /// The rank array is defined such that each element in the original array is replaced by its rank.
@@ -46,8 +46,8 @@ mod tests {
 
     #[test]
     fn test_array_rank_transform() {
-        assert_eq!(Solution::array_rank_transform(vec![40, 10, 20, 30]), vec![4, 1, 2, 3]);
-        assert_eq!(Solution::array_rank_transform(vec![100, 100, 100]), vec![1, 1, 1]);
-        assert_eq!(Solution::array_rank_transform(vec![37, 12, 28, 9, 100, 56, 80, 5, 12]), vec![5, 3, 4, 2, 8, 6, 7, 1, 3]);
+        assert_eq!(HashTable::array_rank_transform(vec![40, 10, 20, 30]), vec![4, 1, 2, 3]);
+        assert_eq!(HashTable::array_rank_transform(vec![100, 100, 100]), vec![1, 1, 1]);
+        assert_eq!(HashTable::array_rank_transform(vec![37, 12, 28, 9, 100, 56, 80, 5, 12]), vec![5, 3, 4, 2, 8, 6, 7, 1, 3]);
     }
 }

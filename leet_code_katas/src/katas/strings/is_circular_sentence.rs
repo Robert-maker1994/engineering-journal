@@ -1,5 +1,5 @@
-use super::solution::Solution;
-impl Solution {
+use super::Strings;
+impl Strings {
 
 /// Checks if a given sentence is circular.
 /// 

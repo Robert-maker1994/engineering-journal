@@ -1,5 +1,6 @@
-use super::solution::Solution;
-impl Solution {
+use super::HashTable;
+
+impl HashTable {
 /// Determines if the array can be rearranged such that the sum of every pair of elements is divisible by `k`.
 ///
 /// # Arguments
@@ -47,10 +48,10 @@ mod tests {
 
     #[test]
     fn test_can_arrange() {
-        assert_eq!(Solution::can_arrange(vec![1, 2, 3, 4, 5, 10, -10, -5, -4, -3, -2, -1], 5), true);
-        assert_eq!(Solution::can_arrange(vec![1, 2, 3, 4, 5, 6], 7), true);
-        assert_eq!(Solution::can_arrange(vec![1, 2, 3, 4, 5, 6], 10), false);
-        assert_eq!(Solution::can_arrange(vec![1, 2, 3, 4, 5, -6], 5), false);
-        assert_eq!(Solution::can_arrange(vec![-1, 1, -2, 2, -3, 3, -4, 4], 3), true);
+        assert_eq!(HashTable::can_arrange(vec![1, 2, 3, 4, 5, 10, -10, -5, -4, -3, -2, -1], 5), true);
+        assert_eq!(HashTable::can_arrange(vec![1, 2, 3, 4, 5, 6], 7), true);
+        assert_eq!(HashTable::can_arrange(vec![1, 2, 3, 4, 5, 6], 10), false);
+        assert_eq!(HashTable::can_arrange(vec![1, 2, 3, 4, 5, -6], 5), false);
+        assert_eq!(HashTable::can_arrange(vec![-1, 1, -2, 2, -3, 3, -4, 4], 3), true);
     }
 }
