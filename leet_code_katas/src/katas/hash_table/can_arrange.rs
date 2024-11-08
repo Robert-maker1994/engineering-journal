@@ -1,8 +1,6 @@
 use super::HashTable;
 
 impl HashTable {
-/// Determines if the array can be rearranged such that the sum of every pair of elements is divisible by `k`.
-///
 /// # Arguments
 ///
 /// * `arr` - A vector of integers.

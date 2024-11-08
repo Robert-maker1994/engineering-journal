@@ -3,7 +3,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 use super::DFS;
-use crate::katas::tree_node::TreeNode;
+use crate::katas::data_structures::tree_node::TreeNode;
 
 impl DFS {
     /// This module provides a solution to find the maximum depth of a binary tree.

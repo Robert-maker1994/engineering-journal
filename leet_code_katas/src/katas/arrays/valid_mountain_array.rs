@@ -1,7 +1,6 @@
 use super::Arrays;
-
 impl Arrays {
-    /// ### Title: Determines if the given array is a valid mountain array.
+    /// # Determines if the given array is a valid mountain array.
     ///
     /// A mountain array is defined as an array that:
     /// - Has at least 3 elements.

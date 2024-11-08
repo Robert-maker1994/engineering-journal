@@ -1,8 +1,6 @@
 use super::HashTable;
 
 impl HashTable {
-/// Transforms the given array into its rank array.
-///
 /// The rank array is defined such that each element in the original array is replaced by its rank.
 /// The rank of an element is its position in the sorted array, starting from 1. If two elements are equal,
 /// they receive the same rank.

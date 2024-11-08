@@ -14,7 +14,6 @@ impl BitManipulation {
             xor_all ^= num;
         }
 
-    
         let max_k = (1 << maximum_bit) - 1;
         
         let mut result = Vec::new();
