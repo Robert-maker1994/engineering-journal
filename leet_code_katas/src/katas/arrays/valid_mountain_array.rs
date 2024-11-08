@@ -1,8 +1,7 @@
-/// This struct represents the solution to the problem.
-struct Solution;
+use crate::katas::solution::Solution;
 
 impl Solution {
-    /// Determines if the given array is a valid mountain array.
+    /// ### Title: Determines if the given array is a valid mountain array.
     ///
     /// A mountain array is defined as an array that:
     /// - Has at least 3 elements.

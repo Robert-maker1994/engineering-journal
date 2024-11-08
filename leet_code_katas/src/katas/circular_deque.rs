@@ -1,18 +1,19 @@
-struct MyCircularDeque {
+
+struct _MyCircularDeque {
     q: Vec<i32>,
 }
 
-impl MyCircularDeque {
+impl _MyCircularDeque {
 
-     fn new(k: i32) -> Self {
-        MyCircularDeque {
+    fn _new(k: i32) -> Self {
+        _MyCircularDeque {
             q: Vec::with_capacity(k as usize),
         }
     }
 
-    fn insert_front(&mut self, value: i32) -> bool {
+    fn _insert_front(&mut self, value: i32) -> bool {
         // check if the deque is full
-        if self.is_full() {
+        if self._is_full() {
             return false;
         }
         // insert the value at the front
@@ -20,9 +21,9 @@ impl MyCircularDeque {
         true
     }
 
-    fn insert_last(&mut self, value: i32) -> bool {
+    fn _insert_last(&mut self, value: i32) -> bool {
         // check if the deque is full
-        if self.is_full() {
+        if self._is_full() {
             return false;
         }
         // insert the value at the end
@@ -30,9 +31,9 @@ impl MyCircularDeque {
         true
     }
 
-    fn delete_front(&mut self) -> bool {
+    fn _delete_front(&mut self) -> bool {
         // check if the deque is empty
-        if self.is_empty() {
+        if self._is_empty() {
             return false;
         }
 
@@ -40,33 +41,33 @@ impl MyCircularDeque {
         true
     }
 
-    fn delete_last(&mut self) -> bool {
-        if self.is_empty() {
+    fn _delete_last(&mut self) -> bool {
+        if self._is_empty() {
             return false;
         }
         self.q.pop();
         true
     }
 
-    fn get_front(&self) -> i32 {
-        if self.is_empty() {
+    fn _get_front(&self) -> i32 {
+        if self._is_empty() {
             return -1;
         }
         self.q[0]
     }
     
-    fn get_rear(&self) -> i32 {
-        if self.is_empty() {
+    fn _get_rear(&self) -> i32 {
+        if self._is_empty() {
             return -1;
         }
         self.q[self.q.len() - 1]
     }
 
-    fn is_empty(&self) -> bool {
+    fn _is_empty(&self) -> bool {
         self.q.is_empty()
     }
 
-    fn is_full(&self) -> bool {
+    fn _is_full(&self) -> bool {
         self.q.len() == self.q.capacity()
     }
 }

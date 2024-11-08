@@ -1,5 +1,6 @@
 pub mod all_one;
 pub mod array_rank_transform;
+pub mod bit_manipulation;
 pub mod can_arrange;
 pub mod circular_deque;
 pub mod count_squares;

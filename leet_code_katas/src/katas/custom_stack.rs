@@ -1,6 +1,6 @@
 
-pub struct CustomStack {
-    s: Vec<i32>,
+pub struct _CustomStack {
+    _s: Vec<i32>,
 }
 
 
@@ -19,31 +19,31 @@ pub struct CustomStack {
 ///
 /// - `increment(&mut self, k: i32, val: i32)`:
 ///   Increments the bottom `k` elements of the stack by `val`. If `k` is greater than the number of elements in the stack, all elements are incremented.
-impl CustomStack {
-fn new(capacity: i32) -> Self {
-        CustomStack {
-            s: Vec::with_capacity(capacity.try_into().unwrap()),
+impl _CustomStack {
+fn _new(capacity: i32) -> Self {
+        _CustomStack {
+            _s: Vec::with_capacity(capacity.try_into().unwrap()),
         }
     }
 
-    fn push(&mut self, x: i32) {
-        if self.s.len() < self.s.capacity() {
-            self.s.push(x);
+    fn _push(&mut self, x: i32) {
+        if self._s.len() < self._s.capacity() {
+            self._s.push(x);
         }
     }
 
-    fn pop(&mut self) -> i32 {
-        if self.s.is_empty() {
+    fn _pop(&mut self) -> i32 {
+        if self._s.is_empty() {
             return -1;
         }
 
-        self.s.pop().unwrap()
+        self._s.pop().unwrap()
     }
 
-    fn increment(&mut self, k: i32, val: i32) {
-        let limit = k.min(self.s.len() as i32) as usize;
+    fn _increment(&mut self, k: i32, val: i32) {
+        let limit = k.min(self._s.len() as i32) as usize;
         for i in 0..limit {
-            self.s[i] += val;
+            self._s[i] += val;
         }
     }
 }
@@ -54,46 +54,46 @@ mod tests {
 
     #[test]
     fn test_custom_stack() {
-        let mut stack = CustomStack::new(3);
-        stack.push(1);
-        stack.push(2);
-        assert_eq!(stack.pop(), 2);
-        assert_eq!(stack.pop(), 1);
-        assert_eq!(stack.pop(), -1);
+        let mut stack = _CustomStack::_new(3);
+        stack._push(1);
+        stack._push(2);
+        assert_eq!(stack._pop(), 2);
+        assert_eq!(stack._pop(), 1);
+        assert_eq!(stack._pop(), -1);
     }
 
     #[test]
     fn test_increment() {
-        let mut stack = CustomStack::new(5);
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.increment(3, 5);
-        println!("test {:?}", stack.s);
-        assert_eq!(stack.pop(), 8);
-        assert_eq!(stack.pop(), 7);
-        assert_eq!(stack.pop(), 6);
+        let mut stack = _CustomStack::_new(5);
+        stack._push(1);
+        stack._push(2);
+        stack._push(3);
+        stack._increment(3, 5);
+        println!("test {:?}", stack._s);
+        assert_eq!(stack._pop(), 8);
+        assert_eq!(stack._pop(), 7);
+        assert_eq!(stack._pop(), 6);
     }
 
     #[test]
     fn test_push_beyond_capacity() {
-        let mut stack = CustomStack::new(2);
-        stack.push(1);
-        stack.push(2);
-        stack.push(3); // This push should be ignored as capacity is 2
-        assert_eq!(stack.pop(), 2);
-        assert_eq!(stack.pop(), 1);
-        assert_eq!(stack.pop(), -1);
+        let mut stack = _CustomStack::_new(2);
+        stack._push(1);
+        stack._push(2);
+        stack._push(3); // This push should be ignored as capacity is 2
+        assert_eq!(stack._pop(), 2);
+        assert_eq!(stack._pop(), 1);
+        assert_eq!(stack._pop(), -1);
     }
 
     #[test]
     fn test_increment_beyond_length() {
-        let mut stack = CustomStack::new(3);
-        stack.push(1);
-        stack.push(2);
-        stack.increment(5, 10); // Increment more elements than present
-        assert_eq!(stack.pop(), 12);
-        assert_eq!(stack.pop(), 11);
-        assert_eq!(stack.pop(), -1);
+        let mut stack = _CustomStack::_new(3);
+        stack._push(1);
+        stack._push(2);
+        stack._increment(5, 10); // Increment more elements than present
+        assert_eq!(stack._pop(), 12);
+        assert_eq!(stack._pop(), 11);
+        assert_eq!(stack._pop(), -1);
     }
 }

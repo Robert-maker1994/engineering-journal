@@ -1,4 +1,3 @@
-use std::ops::Index;
 use super::solution::Solution;
 
 impl Solution {

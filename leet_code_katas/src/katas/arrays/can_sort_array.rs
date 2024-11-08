@@ -1,8 +1,4 @@
-use core::num;
-use std::str::{Bytes, Chars};
-
 use crate::katas::solution::Solution;
-use std::collections::HashMap;
 
 impl Solution {
     ///     You are given a 0-indexed array of positive integers nums.
