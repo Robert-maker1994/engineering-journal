@@ -1,5 +1,6 @@
-use super::solution::Solution;
-impl Solution {
+use super::DynamicProgramming;
+
+impl DynamicProgramming {
 /// This function counts the number of square submatrices with all ones in a given binary matrix.
 /// 
 /// # Arguments
@@ -53,7 +54,7 @@ mod tests {
 
     #[test]
     fn test_count_squares() {
-        assert_eq!(Solution::count_squares(vec![vec![0,1,1,1], vec![1,1,1,1], vec![0,1,1,1]]), 15);
-        assert_eq!(Solution::count_squares(vec![vec![1,0,1], vec![1,1,0], vec![1,1,0]]), 7);
+        assert_eq!(DynamicProgramming::count_squares(vec![vec![0,1,1,1], vec![1,1,1,1], vec![0,1,1,1]]), 15);
+        assert_eq!(DynamicProgramming::count_squares(vec![vec![1,0,1], vec![1,1,0], vec![1,1,0]]), 7);
     }
 }

@@ -1,6 +1,6 @@
-use crate::katas::solution::Solution;
+use super::Strings;
 
-impl Solution {
+impl Strings {
     /// You are given a 0-indexed binary string s having an even length.
     /// A string is beautiful if it's possible to partition it into one or more substrings such that:
     /// Each substring has an even length.
@@ -54,21 +54,21 @@ mod tests {
     #[test]
     fn min_changes_1() {
         //
-        assert_eq!(Solution::min_changes("1001".to_string()), 2);
+        assert_eq!(Strings::min_changes("1001".to_string()), 2);
     }
 
     #[test]
     fn min_changes_2() {
-        assert_eq!(Solution::min_changes("0000".to_string()), 0);
+        assert_eq!(Strings::min_changes("0000".to_string()), 0);
     }
 
     #[test]
     fn min_changes_3() {
-        assert_eq!(Solution::min_changes("10".to_string()), 1);
+        assert_eq!(Strings::min_changes("10".to_string()), 1);
     }
     #[test]
     fn min_changes_4() {
-        assert_eq!(Solution::min_changes("11000111".to_string()), 1);
+        assert_eq!(Strings::min_changes("11000111".to_string()), 1);
     }
 
 }

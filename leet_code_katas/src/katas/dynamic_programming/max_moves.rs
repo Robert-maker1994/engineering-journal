@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::DynamicProgramming;
 
-impl Solution {
+impl DynamicProgramming {
     /// This module provides a solution to find the maximum number of moves in a grid.
     /// 
     /// # Algorithm
@@ -73,12 +73,12 @@ mod tests {
             vec![5, 4, 9, 3],
             vec![10, 9, 13, 15],
         ];
-        assert_eq!(Solution::max_moves(grid), 3);
+        assert_eq!(DynamicProgramming::max_moves(grid), 3);
     }
 
     #[test]
     fn test_2() {
         let grid = vec![vec![3, 2, 4], vec![2, 1, 9], vec![1, 1, 7]];
-        assert_eq!(Solution::max_moves(grid), 0);
+        assert_eq!(DynamicProgramming::max_moves(grid), 0);
     }
 }

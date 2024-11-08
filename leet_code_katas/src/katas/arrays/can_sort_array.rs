@@ -1,6 +1,6 @@
-use crate::katas::solution::Solution;
+use super::Arrays;
 
-impl Solution {
+impl Arrays {
     ///     You are given a 0-indexed array of positive integers nums.
     /// In one operation, you can swap any two adjacent elements if they have the same number of
     /// set bits
@@ -46,25 +46,25 @@ mod tests {
 
     #[test]
     fn test_can_sort_array_1() {
-        assert_eq!(Solution::can_sort_array(vec![8, 4, 2, 30, 15]), true)
+        assert_eq!(Arrays::can_sort_array(vec![8, 4, 2, 30, 15]), true)
     }
     #[test]
     fn test_can_sort_array_2() {
-        assert_eq!(Solution::can_sort_array(vec![1, 2, 3, 4, 5]), true)
+        assert_eq!(Arrays::can_sort_array(vec![1, 2, 3, 4, 5]), true)
     }
     
     #[test]
     fn test_can_sort_array_3() {
-        assert_eq!(Solution::can_sort_array(vec![3, 16, 8, 4, 2]), false)
+        assert_eq!(Arrays::can_sort_array(vec![3, 16, 8, 4, 2]), false)
     }
 
     #[test]
     fn test_can_sort_array_4() {
-        assert_eq!(Solution::can_sort_array(vec![20, 16]), false)
+        assert_eq!(Arrays::can_sort_array(vec![20, 16]), false)
     }
     #[test]
     fn test_can_sort_array_5() {
-        assert_eq!(Solution::can_sort_array(vec![136,256,10]), false)
+        assert_eq!(Arrays::can_sort_array(vec![136,256,10]), false)
     }
 
 }

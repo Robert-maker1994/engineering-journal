@@ -1,7 +1,7 @@
 
-use crate::katas::solution::Solution;
+use super::BitManipulation;
 
-impl Solution {
+impl BitManipulation {
  /// Largest Combination With Bitwise AND Greater Than Zero   
 ///     The bitwise AND of an array nums is the bitwise AND of all integers in nums.
 /// For example, for nums = [1, 5, 3], the bitwise AND is equal to 1 & 5 & 3 = 1.
@@ -40,6 +40,6 @@ mod tests {
 
     #[test]
     fn largest_combination_1() {
-        assert_eq!(Solution::largest_combination(vec![16,17,71,62,12,24,14]),4)
+        assert_eq!(BitManipulation::largest_combination(vec![16,17,71,62,12,24,14]),4)
     }
 }

@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::DynamicProgramming;
 
-impl Solution {
+impl DynamicProgramming {
 /// This function calculates the minimum cost to satisfy the shopping needs given the price of each item,
 /// special offers, and the required quantities of each item.
 ///

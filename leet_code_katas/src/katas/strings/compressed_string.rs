@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::Strings;
 
-impl Solution {
+impl Strings {
     /// Compresses a given string by counting consecutive characters and 
     /// appending the count followed by the character to the result string.
     /// 
@@ -27,7 +27,6 @@ impl Solution {
         let mut comp = String::new();
         let mut chars = word.chars().peekable();
 
-        let mut count = 0;
         while let Some(&c) = chars.peek() {
             let mut count = 0;
 
@@ -49,16 +48,16 @@ mod tests {
 
     #[test]
     fn test_compressed_string_1() {
-        assert_eq!(Solution::compressed_string("aaabbbccc".to_string()), "3a3b3c".to_string());
+        assert_eq!(Strings::compressed_string("aaabbbccc".to_string()), "3a3b3c".to_string());
     }
 
     #[test]
     fn test_compressed_string_2() {
-        assert_eq!(Solution::compressed_string("aaaaaaaaaaa".to_string()), "9a2a".to_string());
+        assert_eq!(Strings::compressed_string("aaaaaaaaaaa".to_string()), "9a2a".to_string());
     }
 
     #[test]
     fn test_compressed_string_3() {
-        assert_eq!(Solution::compressed_string("aabbcc".to_string()), "2a2b2c".to_string());
+        assert_eq!(Strings::compressed_string("aabbcc".to_string()), "2a2b2c".to_string());
     }
 }

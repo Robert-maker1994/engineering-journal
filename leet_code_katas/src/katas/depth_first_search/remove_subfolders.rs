@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::DFS;
 
-impl Solution {
+impl DFS {
 
 /// Removes subfolders from a list of folder paths.
 /// 
@@ -66,7 +66,7 @@ mod tests {
             String::from("/c/d"),
             String::from("/c/f"),
         ];
-        assert_eq!(Solution::remove_subfolders(folder), expected);
+        assert_eq!(DFS::remove_subfolders(folder), expected);
 
         let folder = vec![
             String::from("/a"),
@@ -76,7 +76,7 @@ mod tests {
         let expected = vec![
             String::from("/a"),
         ];
-        assert_eq!(Solution::remove_subfolders(folder), expected);
+        assert_eq!(DFS::remove_subfolders(folder), expected);
 
         let folder = vec![
             String::from("/a/b/c"),
@@ -88,6 +88,6 @@ mod tests {
             String::from("/a/b/ca"),
             String::from("/a/b/d"),
         ];
-        assert_eq!(Solution::remove_subfolders(folder), expected);
+        assert_eq!(DFS::remove_subfolders(folder), expected);
     }
 }

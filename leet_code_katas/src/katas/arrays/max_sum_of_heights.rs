@@ -1,6 +1,6 @@
-use crate::katas::solution::Solution;
+use super::Arrays;
 
-impl Solution {
+impl Arrays {
     pub fn maximum_sum_of_heights(heights: Vec<i32>) -> i64 {
         let mut sum = 0;
         let sz = heights.len();
@@ -43,12 +43,12 @@ mod tests {
     #[test]
     fn test_maximum_sum_of_heights() {
         let heights = vec![5, 3, 4, 1, 1];
-        assert_eq!(Solution::maximum_sum_of_heights(heights), 13);
+        assert_eq!(Arrays::maximum_sum_of_heights(heights), 13);
 
         let heights = vec![6, 5, 3, 9, 2, 7];
-        assert_eq!(Solution::maximum_sum_of_heights(heights), 22);
+        assert_eq!(Arrays::maximum_sum_of_heights(heights), 22);
 
         let heights = vec![3, 2, 5, 5, 2, 3];
-        assert_eq!(Solution::maximum_sum_of_heights(heights), 18);
+        assert_eq!(Arrays::maximum_sum_of_heights(heights), 18);
     }
 }

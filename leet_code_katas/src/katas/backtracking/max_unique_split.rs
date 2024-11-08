@@ -1,6 +1,6 @@
-use super::solution::Solution;
+use super::Backtracking;
 
-impl Solution {
+impl Backtracking {
     /// This implementation provides a solution to the problem of finding the maximum number of unique substrings
     /// that a given string can be split into. The solution uses a backtracking approach to explore all possible
     /// ways to split the string and keeps track of the maximum number of unique substrings found.
@@ -80,6 +80,6 @@ mod tests {
     fn test_max_unique_split() {
         // assert_eq!(Solution::max_unique_split("ababccc".to_string()), 5);
         // assert_eq!(Solution::max_unique_split("aba".to_string()), 2);
-        assert_eq!(Solution::max_unique_split("aa".to_string()), 1);
+        assert_eq!(Backtracking::max_unique_split("aa".to_string()), 1);
     }
 }

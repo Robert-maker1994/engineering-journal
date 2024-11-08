@@ -2,10 +2,10 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use super::solution::Solution;
-use super::tree_node::TreeNode;
+use super::DFS;
+use crate::katas::tree_node::TreeNode;
 
-impl Solution {
+impl DFS {
     /// This module provides a solution to find the maximum depth of a binary tree.
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         fn dfs(node: Option<Rc<RefCell<TreeNode>>>) -> i32 {

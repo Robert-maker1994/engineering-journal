@@ -1,6 +1,6 @@
-use crate::katas::solution::Solution;
+use super::Arrays;
 
-impl Solution {
+impl Arrays {
     /// ### Title: Determines if the given array is a valid mountain array.
     ///
     /// A mountain array is defined as an array that:
@@ -32,12 +32,12 @@ impl Solution {
         if i == 0 || i == n - 1 {
             return false;
         }
-        
+
         // this will start in the decreasing part of the array
         while i + 1 < n && arr[i] > arr[i + 1] {
             i += 1;
         }
-        
+
         i == n - 1
     }
 }
@@ -49,8 +49,9 @@ mod test {
     /// Tests for the `valid_mountain_array` function.
     #[test]
     fn test_valid_mountain_array() {
-
-        assert_eq!(Solution::valid_mountain_array(vec![0, 1, 2, 3, 4, 5, 4, 6, 2, 1]), true);
+        assert_eq!(
+            Arrays::valid_mountain_array(vec![0, 1, 2, 3, 4, 5, 4, 6, 2, 1]),
+            true
+        );
     }
 }
-
