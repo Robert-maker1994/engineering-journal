@@ -1,4 +1,6 @@
 //! - **Dynamic Programming**: Algorithms and problems solved using dynamic programming techniques.
+//! 
+//! Go to the DynamicProgramming struct to view the solutions 
 pub struct DynamicProgramming;
 
 /// Counts the number of squares in a matrix.

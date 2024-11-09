@@ -1,4 +1,4 @@
-///! - **String**: Algorithms and problems related to String manipulation.
+//! **String**: Algorithms and problems related to String manipulation.
 pub struct Strings;
 
 /// Compresses a string by replacing consecutive repeating characters with the character followed by the count.
