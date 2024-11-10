@@ -14,24 +14,27 @@ impl BitManipulation {
     /// Ensure that next_value still satisfies the AND 
     /// We want the next_value to have all bits of x
     /// Return the last index of nums convert into i64
-    pub fn min_end(n: i32, x: i32) -> i64 {
-        let mut nums = vec![x];
-        println!("nums: {:?}", nums);
+    pub fn min_end(mut n: i32,mut x: i32) -> i64 {
+        let mut result = 0;
+        let mut bit = 1;
+        n -= 1;
+        while n != 0 || x != 0 {
+            let x_bit_is_set = x & 1 == 1;
+            let n_bit_is_set = n & 1 == 1;
 
-        for i in 1..n {
-            let mut next_value = nums[i as usize - 1] + 1;
-
-            
-            while (next_value & x) != x {
-                next_value += 1;
-                
+            if x_bit_is_set || (!x_bit_is_set && n_bit_is_set) {
+            result |= bit;
             }
-            
-            nums.push(next_value);
+
+            if !x_bit_is_set {
+            n >>= 1;
+            }
+
+            x >>= 1;
+            bit <<= 1;
         }
 
-        nums[n as usize - 1].into()
-    }
+        result  }
 }
 
 #[cfg(test)]
@@ -40,6 +43,6 @@ mod tests {
 
     #[test]
     pub fn test_min_end() {
-        assert_eq!(BitManipulation::min_end(3, 4), 6)
+        assert_eq!(BitManipulation::min_end(6715154, 7193485), 7193485)
     }
 }
