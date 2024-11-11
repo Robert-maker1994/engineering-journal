@@ -33,8 +33,10 @@ pub mod max_sum_of_heights;
 /// Sorts an array using the median as the pivot.
 pub mod median_sort;
 
+/// Prime Subtract operation
+pub mod prime_sub_operation; 
+
 /// Determines if the given array is a valid mountain array.
-///
 /// A mountain array is defined as an array that:
 /// - Has at least 3 elements.
 /// - There exists some index `i` (0 < i < arr.length - 1) such that:
