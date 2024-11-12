@@ -1,36 +1,51 @@
 use super::Arrays;
 
-impl Array {
+impl Arrays {
+    pub fn maximum_beauty(mut items: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
+    	use std::cmp::max;
+
+pub struct Solution;
+
+impl Solution {
     pub fn maximum_beauty(items: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
-    	let mut low = 0;
-        let mut high = items.len();
-        let i = 0;
-        while low < high {
-            let mid = (low + high) / 2;
-            println!("{}", mid);
-            println!("{}", items[mid]);
-            println!("{}", queries[i]);
-            i =+ 1;
-            // if items[mid] == target {
-            //    return Some(mid);
-            // } else if items[mid] < target {
-            //    low = mid + 1;
-            // } else {
-            //    high = mid;
-            // }
+        let mut items = items.clone();
+        let mut ans = vec![0; queries.len()];
+
+        // Sort items by price
+        items.sort_by_key(|item| item[0]);
+
+        // Update max beauty so that each price has the maximum beauty seen up to that price
+        let mut max_beauty = items[0][1];
+        for i in 0..items.len() {
+            max_beauty = max(max_beauty, items[i][1]);
+            items[i][1] = max_beauty;
         }
-    
-        
+
+        // Process each query using binary search
+        for (i, &query) in queries.iter().enumerate() {
+            ans[i] = Solution::binary_search(&items, query);
+        }
+
+        ans
+    }
+
+    fn binary_search(items: &[Vec<i32>], target_price: i32) -> i32 {
+        let mut left = 0;
+        let mut right = items.len() as i32 - 1;
+        let mut max_beauty = 0;
+
+        while left <= right {
+            let mid = (left + right) / 2;
+            if items[mid as usize][0] > target_price {
+                right = mid - 1;
+            } else {
+                // Found viable price; update max beauty and move right
+                max_beauty = max(max_beauty, items[mid as usize][1]);
+                left = mid + 1;
+            }
+        }
+
+        max_beauty
     }
 }
 
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_maximum_beauty_1() {
-        assert_eq!(Arrays::maximum_beauty([[1,2],[3,2],[2,4],[5,6],[3,5], [1,2,3,4,5,6]]), [2,4,5,5,6,6]);
-    }
-}
