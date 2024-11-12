@@ -43,3 +43,5 @@ pub mod prime_sub_operation;
 ///   - `arr[0] < arr[1] < ... < arr[i - 1] < arr[i]`
 ///   - `arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`
 pub mod valid_mountain_array;
+
+pub mod maximum_beauty;

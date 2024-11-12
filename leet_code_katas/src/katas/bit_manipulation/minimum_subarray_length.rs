@@ -29,7 +29,7 @@ use super::BitManipulation;
 /// 5. If no valid subarray is found, return `-1`. Otherwise, return the minimum length found.
 impl BitManipulation {
     
-    pub fn minimum_subarray_length(mut nums: Vec<i32>, k: i32) -> i32 {
+    pub fn minimum_subarray_length(nums: Vec<i32>, k: i32) -> i32 {
         let n = nums.len();
         let mut min_len = n as i32 + 1;
         let mut left = 0;

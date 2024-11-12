@@ -7,9 +7,8 @@
 /// A strictly increasing array is an array whose each element is strictly greater than its preceding element.
 
 use super::Arrays;
-pub struct Solution;
 
-impl Solution {
+impl Arrays {
     pub fn check_prime(x: i32) -> bool {
         if x <= 1 {
             return false;
