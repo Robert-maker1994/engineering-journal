@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 use super::Arrays;
 
+/// TODO documation and organising 
 impl Arrays {
     fn lower_bound(nums: &Vec<i32>, mut low: usize, mut high: usize, element: i32) -> usize {
         while low <= high {
