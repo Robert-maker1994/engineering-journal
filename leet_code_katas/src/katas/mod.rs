@@ -6,4 +6,5 @@ pub mod depth_first_search;
 pub mod dynamic_programming;
 pub mod hash_table;
 pub mod numbers;
+pub mod queue;
 pub mod strings;

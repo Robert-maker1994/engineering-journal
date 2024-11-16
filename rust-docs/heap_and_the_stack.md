@@ -3,9 +3,11 @@
 The heap and the stack are two fundamental memory allocation mechanisms used in programming languages. Understanding their differences and how they work is crucial for efficient memory management and program performance.
 
 ## The Stack 
+
 The stack operates in a first-in, first-out (FIFO) flow.  It is used to store local variables, functions parameters and return addresses. The stack is and efficient but limited size.
 
 # Characteristics of the Stack
+
 - Fast Allocation and Deallocation: Memory allocation and deallocation on the stack are very fast because they follow a simple LIFO order.
 - Limited Size: The stack has a limited size, which can lead to stack overflow if too much data is stored.
 - Automatic Management: In many programming languages, the stack is automatically managed, ensuring that variables are deallocated when they go out of scope.
