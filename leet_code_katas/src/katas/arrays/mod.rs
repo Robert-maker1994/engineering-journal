@@ -46,4 +46,9 @@ pub mod valid_mountain_array;
 
 pub mod maximum_beauty;
 
-pub mod find_length_of_shortest_subarray;
+pub mod max_pairings;
+
+///  Find the Power of K-Size Subarrays I
+pub mod results_array;
+
+pub mod find_min_length_in_subarray;

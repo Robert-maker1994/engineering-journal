@@ -1,4 +1,3 @@
-use std::cmp::Ordering;
 use super::Arrays;
 
 /// TODO documation and organising 

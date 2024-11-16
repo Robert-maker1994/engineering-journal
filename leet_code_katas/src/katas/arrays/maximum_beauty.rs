@@ -1,13 +1,8 @@
 use super::Arrays;
+use std::cmp::max;
 
 impl Arrays {
     pub fn maximum_beauty(mut items: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
-    	use std::cmp::max;
-
-pub struct Solution;
-
-impl Solution {
-    pub fn maximum_beauty(items: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
         let mut items = items.clone();
         let mut ans = vec![0; queries.len()];
 
@@ -23,7 +18,7 @@ impl Solution {
 
         // Process each query using binary search
         for (i, &query) in queries.iter().enumerate() {
-            ans[i] = Solution::binary_search(&items, query);
+            ans[i] = Arrays::binary_search(&items, query);
         }
 
         ans
