@@ -35,6 +35,7 @@ impl Queues {
         student_queue.len() as i32
     }
 }
+
 #[cfg(test)]
 mod tests {
     use super::Queues; 
