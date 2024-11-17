@@ -1,6 +1,5 @@
-workspace = { members = ["src/katas"] }
 [package]
-name = "engineering"
+name = "katas"
 version = "0.1.0"
 edition = "2021"
 

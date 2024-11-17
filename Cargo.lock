@@ -3,5 +3,9 @@
 version = 3
 
 [[package]]
-name = "leet_code_katas"
+name = "engineering"
+version = "0.1.0"
+
+[[package]]
+name = "katas"
 version = "0.1.0"
