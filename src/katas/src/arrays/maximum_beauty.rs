@@ -8,7 +8,7 @@ impl Arrays {
 
         // Sort items by price
         items.sort_by_key(|item| item[0]);
-
+println!()
         // Update max beauty so that each price has the maximum beauty seen up to that price
         let mut max_beauty = items[0][1];
         for i in 0..items.len() {

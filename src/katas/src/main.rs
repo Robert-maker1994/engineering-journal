@@ -9,5 +9,4 @@ fn main() {
     hash.insert(321, "Sandy");
     hash.insert(555, "Squidward");
     hash.insert(777, "Gary");
-
 }

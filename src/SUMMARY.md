@@ -10,6 +10,7 @@
   - [Glossary](./computer-science/glossary.md)
   - [Heap and the Stack](./computer-science/heap_and_the_stack.md)
 - [Data Engineering](./data-engineering/README.md)
-- [katas](./katas/README.md)
+- [katas New](./katas-new/README.md)
+  - [arrays](./katas-new/arrays/README.md)
 
   

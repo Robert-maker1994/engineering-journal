@@ -1,0 +1,29 @@
+[book]
+title = "Journal"
+authors = ["John Doe"]
+description = "The example book covers examples."
+text-direction = "ltr"
+language = "en"
+multilingual = false
+
+[rust]
+edition = "2024"
+
+[build]
+build-dir = "journal"
+create-missing = false
+
+[preprocessor.index]
+
+[output.html.playground]
+editable = true
+
+[preprocessor.links]
+
+[output.html.fold]
+enable = false    
+
+[output.html]
+
+[output.html.search]
+limit-results = 15

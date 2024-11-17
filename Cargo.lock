@@ -7,5 +7,5 @@ name = "engineering"
 version = "0.1.0"
 
 [[package]]
-name = "katas"
+name = "katas-old"
 version = "0.1.0"
