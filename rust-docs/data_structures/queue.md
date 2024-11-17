@@ -1,10 +1,10 @@
 
 
-## What is a Queue?
+# What is a Queue?
 
 A *queue* is a linear data structure, it follows the **First In, First Out** (FIFO) principle.This means the first item added to the queue is the first one to be removed, much like a line of people waiting for a service.
 
-# What is a linear data structure? 
+## What is a linear data structure? 
 
 Linear means a straight line or one dimension. 
 
@@ -16,21 +16,22 @@ Characteristics of a linear data structure?
 - Traversal
 - Contiguity or Linkage
 
-# Key characteristics of queue?
+## Key characteristics of queue?
 - FIFO Order: The order of insertion is the order of removal.
 - Two Ends:
     - Front: Where elements are dequeued (removed).
     - Rear: Where elements are enqueued (added).
 - Dynamic Size: Can grow or shrink as elements are added or removed (depending on implementation).
 
-# Types of Queues?
+## Types of Queues?
 
 - Simple Queue: Follows the basic FIFO principle.
 - Circular Queue: The rear wraps around to the front when the end of the queue is reached, optimizing space.
 - Priority Queue: Each element is associated with a priority, and elements are dequeued based on their priority, not their order.
 - Deque (Double-Ended Queue): Allows insertion and deletion from both ends.
 
-# Where would you use a Queue?
+## Where would you use a Queue?
+
 1. Scheduling:
     - CPU task scheduling.
     - Printer task scheduling.
@@ -43,7 +44,7 @@ Characteristics of a linear data structure?
 5. Order Processing:
     - Managing requests or events in the order they arrive.
 
-# Implementing 
+## Implementing 
 Implementing a queue in javascript would have to implement the queue using an array. For example in other languages are already built into the lang. [VecDeque](https://doc.rust-lang.org/std/collections/struct.VecDeque.html)
 ```
 class Queue {
