@@ -1,16 +1,19 @@
 # Summary
 
 - [Introduction](./introduction.md)
-- [Computer Science](./computer-science/README.md)
-  - [Data Structures](./computer-science/data_structures/README.md)
-    - [Hash Table](./computer-science/data_structures/hash_table.md)
-    - [Queue](./computer-science/data_structures/queue.md)
-    - [Stack](./computer-science/data_structures/stack.md)
-    - [Trees](./computer-science/data_structures/trees/trees.md)
-  - [Glossary](./computer-science/glossary.md)
-  - [Heap and the Stack](./computer-science/heap_and_the_stack.md)
+- [Data Structures](./data-structures-and-algorithms/README.md)
+    - [Hash Table](./data-structures-and-algorithms/hash_table.md)
+    - [Queue](./data-structures-and-algorithms/queue.md)
+    - [Stack](./data-structures-and-algorithms/stack.md)
+    - [Trees](./data-structures-and-algorithms/trees/trees.md)
+      - [Binary Tree](./data-structures-and-algorithms/trees/binary_tree.md)
+  - [Glossary](./data-structures-and-algorithms/glossary.md)
+  - [Heap and the Stack](./data-structures-and-algorithms/heap_and_the_stack.md)
 - [Data Engineering](./data-engineering/README.md)
 - [katas New](./katas-new/README.md)
-  - [arrays](./katas-new/arrays/README.md)
+  - [Arrays](./katas-new/arrays/README.md)
+  - [Queues]()
+    - [Shortest array](./katas-new/queues/shortest_subarray.md)
+    
 
   
