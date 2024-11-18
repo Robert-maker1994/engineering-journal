@@ -52,5 +52,5 @@ Concepts that I used for this is functional programming, iterators and mapping.
 
 ### Aspects learn in this Coding Kata
 
-First time concepts - Modulo,  Circular Indexing. 
+First time concepts - Modulo,  Circular Indexing learn more [*Circular Queue*](../../data-structures-and-algorithms/queues/circular_queue.md)
 

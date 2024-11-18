@@ -1,7 +1,5 @@
 # Data Structures and Algorithms
 
-## Data Structures
-
 Data structures are ways of organizing and storing data so that they can be accessed and modified efficiently. They are fundamental to designing efficient algorithms and software systems. Common data structures include:
 
 <!-- - **Linked Lists**: A linear collection of elements, where each element points to the next. -->

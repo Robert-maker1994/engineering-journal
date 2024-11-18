@@ -25,9 +25,9 @@ Characteristics of a linear data structure?
 
 ## Types of Queues?
 
-- Simple Queue: Follows the basic FIFO principle.
-- Circular Queue: The rear wraps around to the front when the end of the queue is reached, optimizing space.
-- Priority Queue: Each element is associated with a priority, and elements are dequeued based on their priority, not their order.
+- *Simple Queue*: Follows the basic FIFO principle.
+- [*Circular Queue*](./cicular_queue.md): The rear wraps around to the front when the end of the queue is reached, optimizing space.
+- *Priority Queue*: Each element is associated with a priority, and elements are dequeued based on their priority, not their order.
 - Deque (Double-Ended Queue): Allows insertion and deletion from both ends.
 
 ## Where would you use a Queue?
