@@ -11,9 +11,11 @@
   - [Heap and the Stack](./data-structures-and-algorithms/heap_and_the_stack.md)
 - [Data Engineering](./data-engineering/README.md)
 - [katas New](./katas-new/README.md)
-  - [Arrays](./katas-new/arrays/README.md)
+  - [Arrays]()
+    - [Defuse Bomb](./katas-new/arrays/defuse_bomb.md) 
   - [Queues]()
     - [Shortest array](./katas-new/queues/shortest_subarray.md)
+  
     
 
   
