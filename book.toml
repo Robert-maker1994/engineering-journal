@@ -13,20 +13,19 @@ edition = "2024"
 build-dir = "journal"
 create-missing = false
 
+[preprocessor.summary]
+command = "summary.exe"
+
 [preprocessor.index]
+
 
 [output.html.playground]
 editable = true
-
-[preprocessor.links]
 
 [output.html.fold]
 enable = false    
 
 [output.html]
 
-
 [output.html.search]
 limit-results = 15
-
-[output.backend]

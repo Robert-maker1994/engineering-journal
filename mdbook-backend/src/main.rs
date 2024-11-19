@@ -1,45 +1,65 @@
-use std::{fs, io, path::Path};
+use std::{fs::{self, DirEntry, File}, io::{self, Write}, path::{Path, PathBuf}};
+
+use mdbook_backend::{generate_name_dir, generate_name_file};
 
 
-// I want to console out the 
+// Todo - handle root files that are not md 
+// Handle sub files of directories. 
 
 fn main() -> io::Result<()> {
-
-    println!("helllooo");
-
     let dir = std::env::current_dir().unwrap();
+    let root: PathBuf = dir.ancestors().nth(1).unwrap_or_else(|| Path::new("/")).join("src");
+    let summary = File::options().read(true).write(true).append(true).open(root.join("SUMMARY.md")).expect("failed to create file");
 
-    
-    let root = dir.ancestors().nth(1).unwrap_or_else(|| Path::new("/"));
-    println!("Root of the current folder system: {:?}", root);
-
-    for entry in fs::read_dir(root.join("src"))? {
-        let entry = entry?;
-        let path = entry.path();
-        if path.is_file() {
-            println!("File: {:?}", path);
-        } else if path.is_dir() {
-            println!("Directory: {:?}", path);
+    for entry in fs::read_dir(root)? {
+        if let Ok(cloned_summary) = summary.try_clone() {
+            generate_entry_names(entry?, cloned_summary);
+        } else {
+            eprintln!("Failed to clone summary file");
         }
     }
-    // let mut entries = fs::read_dir(dir)?
-    //     .map(|res| res.map(|e| e.path()))
-    //     .collect::<Result<Vec<_>, io::Error>>()?;
-
-    // println!("hello me {:?}", entries );
-
     Ok(())
-    // let path = "../../src/new_file.txt";
-        // let mut file = match File::create(path) {
-        //     Ok(file) => file,
-        //     Err(e) => {
-        //         eprintln!("Failed to create file: {}", e);
-        //         return;
-        //     }
-        // };
+}
 
-        // match file.write_all(b"Hello, world!") {
-        //     Ok(_) => println!("File created successfully"),
-        //     Err(e) => eprintln!("Failed to write to file: {}", e),
-        // }
+fn generate_entry_names(entry: DirEntry, summary: File) {
+    let path = entry.path();
+    if path.is_file() {
+        if let Some(extension) = &path.extension() {
+            if *extension == "md" {
+                let title = generate_name_file(path.clone());
+
+                match title {
+                    Ok(name) => {
+                        if let Ok(mut file) = summary.try_clone() {
+                            writeln!(file, "{}", name).expect("hello");
+                        }
+                    }
+                    Err(e) => eprintln!("Failed to generate name: {}", e),
+                }
+        }
+           }
+        }
+
+    if path.is_dir() {
+        let title = generate_name_dir(path.clone());
+
+        match title {
+            Ok(name) => {
+                if let Ok(mut file) = summary.try_clone() {
+                    writeln!(file, " - {}", name).expect("hello");
+                }
+            }
+            Err(e) => eprintln!("Failed to generate name: {}", e),
+        }
+            let entry = fs::read_dir(path).expect("msg");
+            for en in entry {
+
+                generate_entry_names(en.expect("msg"), summary.try_clone().expect("msg"));
+
+            }
+            
+        } else {
+            eprintln!("Failed to clone summary file");
+        }
+
 }
