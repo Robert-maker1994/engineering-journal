@@ -25,5 +25,8 @@ enable = false
 
 [output.html]
 
+
 [output.html.search]
 limit-results = 15
+
+[output.backend]

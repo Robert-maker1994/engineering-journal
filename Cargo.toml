@@ -1,4 +1,4 @@
-workspace = { members = ["src/katas"] }
+workspace = { members = [ "mdbook-backend","src/katas"] }
 [package]
 name = "engineering"
 version = "0.1.0"
