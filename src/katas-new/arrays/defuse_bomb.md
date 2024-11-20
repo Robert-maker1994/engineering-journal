@@ -1,6 +1,6 @@
 # [Defuse the bomb](https://leetcode.com/problems/defuse-the-bomb/description/?envType=daily-question&envId=2024-11-18)
 
-Topics *Sliding windows* - *Arrays*
+Topics - *Sliding windows* - *Arrays*
 
 You have a bomb to defuse, and your time is running out! Your informer will provide you with a circular array code of length of n and a key k.
 

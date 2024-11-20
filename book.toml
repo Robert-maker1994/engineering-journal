@@ -7,16 +7,18 @@ language = "en"
 multilingual = false
 
 [rust]
-edition = "2024"
+edition = "2015"
 
 [build]
 build-dir = "journal"
 create-missing = false
 
-[preprocessor.summary]
-command = "summary.exe"
-
 [preprocessor.index]
+
+[preprocessor.links]
+
+[preprocessor.generate-summary]
+command = "target/release/mdbook-generate-summary"
 
 
 [output.html.playground]
