@@ -1,14 +1,17 @@
-use clap::{ Arg, ArgMatches, Command};
-use mdbook::book::Book;
+use clap::{Arg, ArgMatches, Command};
 use mdbook::errors::Error;
 use mdbook::errors::Result;
-use mdbook::preprocess::{CmdPreprocessor, Preprocessor, PreprocessorContext};
-use mdbook_generate_summary::generate_summary;
+use mdbook::preprocess::Preprocessor;
+use mdbook::preprocess::CmdPreprocessor;
+use mdbook_generate_summary::{
+    SummaryContent, 
+    summary_generator::SummaryGenerator
+};
 use std::io;
 use std::process;
 
 pub fn make_app() -> Command {
-    Command::new("generate-summary")
+    Command::new("summary-generator")
         .about("A mdbook preprocessor that adds support for generate summary pages")
         .subcommand(
             Command::new("supports")
@@ -17,72 +20,51 @@ pub fn make_app() -> Command {
         )
 }
 
-fn main() {  
+fn main() {
+    let mut value = "src";
     
-    let root = std::env::current_dir()
+    let root: std::path::PathBuf = std::env::current_dir()
     .expect("Cannot get current directory ")
-    .join("src").join("SUMMARY.md");
+    .join(value);
 
-    if root.exists()  {
-        generate_summary();
-    }
-    let matches = make_app().get_matches();
+    let summary_content = SummaryContent::new(&root);
+
+    summary_content.generate_summary();
     
+    let pre = SummaryGenerator;
+
+    let matches: ArgMatches = make_app().get_matches();
+
     if let Some(sub_args) = matches.subcommand_matches("supports") {
-        handle_supports(sub_args);
-    
-    }  else if let Err(e) = handle_preprocessing() {
+        handle_supports(sub_args, &pre);
+    } else if let Err(e) = handle_preprocessing(&pre) {
         println!("errrr {}", e);
         process::exit(1);
     }
 }
 
-fn handle_preprocessing() -> Result<(), Error> {
+fn handle_preprocessing(pre: &dyn Preprocessor) -> Result<(), Error> {
+
     let (ctx, book) = CmdPreprocessor::parse_input(io::stdin())?;
-    let pre = SummaryGenerator;
+    
     let processed_book = pre.run(&ctx, book)?;
 
     serde_json::to_writer(io::stdout(), &processed_book)?;
     Ok(())
 }
 
-fn handle_supports(sub_args: &ArgMatches) -> ! {
-    let pre = SummaryGenerator::default();
+fn handle_supports(sub_args: &ArgMatches, pre: &dyn Preprocessor) -> ! {
 
     let renderer = sub_args
         .get_one::<String>("renderer")
         .expect("Required argument");
+
     let supported = pre.supports_renderer(renderer);
 
-    // Signal whether the renderer is supported by exiting with 1 or 0.
     if supported {
         process::exit(0);
     } else {
         process::exit(1);
-    }
-}
-
-pub struct SummaryGenerator;
-
-impl Default for SummaryGenerator {
-    fn default() -> Self {
-        SummaryGenerator {   }
-    }
-}
-
-impl Preprocessor for SummaryGenerator {
-    fn name(&self) -> &str {
-        "summary-generator"
-    }
-
-    fn run(&self, ctx: &PreprocessorContext, book: Book) -> Result<Book> {
-        Ok(book)
-    }
-    
-    /// Indicate whether a renderer is supported.  This preprocessor can emit MarkDown so should support almost any
-    /// renderer.
-    fn supports_renderer(&self, renderer: &str) -> bool {
-        false
     }
 }
 

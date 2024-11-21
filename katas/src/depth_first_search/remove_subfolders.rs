@@ -26,8 +26,6 @@ impl DFS {
 /// 
 /// * A vector of strings representing the folders with subfolders removed.
 /// 
-
-
     pub fn remove_subfolders(folder: Vec<String>) -> Vec<String> {
         let mut folder = folder;
         folder.sort();
