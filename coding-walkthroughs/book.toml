@@ -1,0 +1,31 @@
+[book]
+title = "Coding Walkthroughs"
+authors = ["Robert Lawson, a little bit of the internet"]
+description = "A book to try and implement the other books I have in this repo."
+text-direction = "ltr"
+language = "en"
+multilingual = false
+
+[rust]
+edition = "2015"
+
+[build]
+build-dir = "coding-walkthroughs"
+create-missing = false
+
+[preprocessor.generate-summary]
+
+[preprocessor.index]
+
+[preprocessor.links]
+
+[output.html.playground]
+editable = true
+
+[output.html.fold]
+enable = false    
+
+[output.html]
+
+[output.html.search]
+limit-results = 15

@@ -1,0 +1,11 @@
+# Summary
+  - [Glossary](./glossary.md)
+  - [Hash Table](./hash_table.md)
+  - [Heap And The Stack](./heap_and_the_stack.md)
+  - [Queues](./queues/README.md)
+    - [Circular Queue](./queues/circular_queue.md)
+    - [Queue](./queues/queue.md)
+  - [Stack](./stack.md)
+  - [Trees](./trees/README.md)
+    - [Binary Tree](./trees/binary_tree.md)
+    - [Trees](./trees/trees.md)

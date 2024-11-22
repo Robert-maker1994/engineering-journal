@@ -1,9 +1,8 @@
-workspace = { members = [ "katas", "mdbook-generate-summary"] }
+workspace = { members = [ "coding-walkthroughs", "data-engineering", "data-structures-and-algorithms"] }
 [package]
-name = "engineering"
+name = "journal"
+authors = ["Robert Lawson"]
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
