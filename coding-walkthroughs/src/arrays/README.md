@@ -1,1 +1,3 @@
-- [max_kelements](./katas-new/arrays/max_kelements.md)
+# Arrays 
+
+In this folder there are an arrange of Coding walkthroughs regarding Arrays

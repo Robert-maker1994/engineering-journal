@@ -1,8 +1,0 @@
-workspace = { members = [ "coding-walkthroughs", "data-engineering", "data-structures-and-algorithms"] }
-[package]
-name = "journal"
-authors = ["Robert Lawson"]
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
