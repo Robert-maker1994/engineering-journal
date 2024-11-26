@@ -1,5 +1,6 @@
 # Summary
   - [Glossary](./glossary.md)
+  - [Graphs](./graphs/README.md)
   - [Hash Table](./hash_table.md)
   - [Heap And The Stack](./heap_and_the_stack.md)
   - [Queues](./queues/README.md)
