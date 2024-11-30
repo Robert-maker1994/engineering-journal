@@ -4,7 +4,7 @@ The heap and the stack are two fundamental memory allocation mechanisms used in 
 
 ## The Stack 
 
-The stack operates in a first-in, first-out (FIFO) flow.  It is used to store local variables, functions parameters and return addresses. The stack is and efficient but limited size.
+The stack operates in a first-in, first-out (FIFO) flow. It is used to store local variables, functions parameters and return addresses. The stack is and efficient but limited size.
 
 ## Characteristics of the Stack
 
