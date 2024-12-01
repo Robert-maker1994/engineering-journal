@@ -74,8 +74,10 @@ JOIN departments USING (department_id);
 -- WHERE example
 SELECT * FROM employees WHERE position = 'Manager';
 
--- GROUP BY example
-SELECT position, COUNT(*) FROM employees GROUP BY position;
+-- GROUP BY example 
+SELECT * FROM employees
+GROUP BY employees.email
+HAVING COUNT(*) > 1;
 
 -- ORDER BY example
 SELECT * FROM employees ORDER BY name ASC;
