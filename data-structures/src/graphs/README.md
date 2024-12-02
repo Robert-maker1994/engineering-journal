@@ -1,56 +1,96 @@
 # Graphs 
 
-A graph is a non-linear data structure made up of nodes or vertices and edges. The nodes known as vertices are connected by edges. 
+A graph is a non-linear data structure made up of vertices and edges. The nodes known as vertices are connected by edges.
 
+The definition of a graph is `G = (v,e)`
+Graphs are used in a loads of different problems and applications all over the internet, take social media for example, how people are connected are through graphs. Social networks can be represented as a graph, with a person being a vertices and a edge being the connection between two people. 
 
-```plaintext
-      A
-     /|\
-    / | \
-   B--C--D
-    \ | /
-     \|/
-      E
+## Terminology 
+
+1. **Vertex**: A fundamental part of the graph representing an entity or a point.
+2. **Edge**: An connection between two vertices. 
+3. **Degree**: The number of edges connected to a vertices. 
+    - **In-degree**: The number of incoming edges to a vertex. 
+    - **Out-degree**: The number of outgoing edges. 
+4. **Path**: A sequence of vertices where each adjacent pair is connected by an edge.
+    **Path Length**: What is the path length from vertices A -> B. 
+5. **Cycle**: A path that starts and ends in the same vertices 
+6. **Connectivity**: All graphs have some kind of connectivity. 
+    - **Connected Graphs**: There is a path between any pair of vertices. 
+    - **Disconnected Graphs**: Least one pair of vertices without a path between them.
+
+## How do you represent a graph as a data structure?
+
+1. **The adjacency Matrix**
+
+### Example of an Adjacency Matrix
+
+Consider the following graph:
+
+```
+A -- B
+|  / |
+| /  |
+C -- D
 ```
 
-In this example, we have a **graph** with 5 nodes labeled **A, B, C, D, and E**. The graph is fully connected, meaning there is an edge between every pair of nodes.
+The adjacency matrix for this graph would be:
 
-- **Nodes**: A, B, C, D, E
-- **Edges**: Every possible connection between two nodes, resulting in 10 edges in an undirected graph.
+|   | A | B | C | D |
+|---|---|---|---|---|
+| A | 0 | 1 | 1 | 0 |
+| B | 1 | 0 | 1 | 1 |
+| C | 1 | 1 | 0 | 1 |
+| D | 0 | 1 | 1 | 0 |
 
-## Types of Graphs
+In this matrix, the rows and columns represent the vertices, and the values (0 or 1) indicate whether there is an edge between the vertices. For example, the value at row A and column B is 1, indicating there is an edge between vertex A and vertex B.
 
-Graphs can be classified into several categories based on their properties:
+2. **Adjacency List**
 
-## Legend
+### Example of an Adjacency List
 
-- **Node (Vertex)**: Represented by a letter (e.g., A, B, C). It is a fundamental part of a graph.
-- **Edge**: Represented by a line connecting two nodes (e.g., A -- B). It shows a relationship between the nodes.
-- **No Relationship**: When there is no line connecting two nodes, it means there is no direct relationship between them.
+An adjacency list represents a graph as a collection of lists. The keys are the vertices, and the values are lists of adjacent vertices.
 
-```plaintext
-    A -- B    A and B are connected by an edge.
-    C        C has no relationship with A or B.
+Consider the same graph:
+
+```
+A -- B
+|  / |
+| /  |
+C -- D
 ```
 
-1. **Undirected Graph**: A graph in which edges have no direction. The edge (A, B) is identical to the edge (B, A).
-    ```plaintext
-    A -- B
-    ```
+The adjacency list for this graph would be:
 
-2. **Directed Graph (Digraph)**: A graph in which edges have a direction. The edge (A, B) is not the same as the edge (B, A).
-    ```plaintext
-    A -> B
-    ```
+```
+A: B, C
+B: A, C, D
+C: A, B, D
+D: B, C
+```
 
-3. **Weighted Graph**: A graph in which edges have weights or costs associated with them.
-    ```plaintext
-    A -5- B
-    ```
+In this list, each vertex points to a list of vertices that it is connected to. For example, vertex A is connected to vertices B and C.
 
-4. **Unweighted Graph**: A graph in which edges do not have any weights.
-    ```plaintext
-    A -- B
-    ```
+3. **Edge Set**: An edge list is a list of all edges in the graph. Each edge is represented as a pair (or tuple) of vertices.
 
-These classifications help in understanding the structure and properties of graphs, which is essential for designing efficient algorithms.
+### Example of an Edge Set
+
+An edge set represents a graph as a collection of edges. Each edge is represented as a pair (or tuple) of vertices.
+
+Consider the same graph:
+
+```
+A -- B
+|  / |
+| /  |
+C -- D
+```
+
+The edge set for this graph would be:
+
+```
+{ (A, B), (A, C), (B, C), (B, D), (C, D) }
+```
+
+In this set, each pair represents an edge between two vertices. For example, the pair (A, B) indicates there is an edge between vertex A and vertex B.
+
