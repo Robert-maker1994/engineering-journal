@@ -1,5 +1,5 @@
 [book]
-title = "Data Structures and Algorithms"
+title = "Data Structures "
 authors = ["Robert Lawson, a little bit of the internet"]
 description = "A book to explain about data structures and algorithms"
 text-direction = "ltr"

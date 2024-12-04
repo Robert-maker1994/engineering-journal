@@ -1,6 +1,8 @@
 # Summary
   - [Glossary](./glossary.md)
   - [Graphs](./graphs/README.md)
+    - [Direct Graph](./graphs/direct_graph.md)
+    - [Undirect Graph](./graphs/undirect_graph.md)
   - [Hash Table](./hash_table.md)
   - [Heap And The Stack](./heap_and_the_stack.md)
   - [Queues](./queues/README.md)

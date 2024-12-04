@@ -1,19 +1,31 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, VecDeque};
 
-fn dfs_post_order(node: usize, visited_nodes: &mut Vec<bool>, graph: &HashMap<usize, Vec<usize>>, result: &mut Vec<usize>) {
-    visited_nodes[node] = true;
-    if let Some(edges) = graph.get(&node) {
-        for &neighbor in edges {
-            if !visited_nodes[neighbor] {
-                dfs_post_order(neighbor, visited_nodes, graph, result);
+fn bfs(start: usize, graph: &HashMap<usize, Vec<usize>>) {
+    // Initialization 
+    let mut visited = vec![false; graph.len()];
+    let mut queue = VecDeque::new();
+
+    visited[start] = true;
+    queue.push_back(start);
+
+    while let Some(node) = queue.pop_front() {
+       
+        if let Some(edges) = graph.get(&node) {
+            println!("all of the edges for the node {:?}", edges);
+            for &neighbor in edges {
+                if !visited[neighbor] {
+                    // Adds them as visited
+                    visited[neighbor] = true;
+                    // Adds the neighbors into the queue to find them. 
+                    queue.push_back(neighbor);
+                }
             }
         }
     }
-    result.push(node);
 }
 
 fn main() {
-    let edges = vec![vec![0, 1], vec![1, 2], vec![2, 0]];
+      let edges = vec![vec![0, 1], vec![1, 2], vec![2, 0]];
 
     // Initialization stage
     let mut visited_nodes: Vec<bool> = vec![false; edges.len()];
@@ -25,12 +37,5 @@ fn main() {
         graph.entry(edge[1]).or_insert(Vec::new()).push(edge[0]);
     }
 
-    // Result vector to store the post-ordering
-    let mut result = Vec::new();
-
-    // Perform DFS starting from node 0
-    dfs_post_order(0, &mut visited_nodes, &graph, &mut result);
-
-    // Print the post-ordering result
-    println!("Post-ordering: {:?}", result);
+   bfs(0, &graph);
 }
