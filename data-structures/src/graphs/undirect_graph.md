@@ -52,9 +52,11 @@ fn main() {
 - Here is a graph in an adjacency Matrix. 
 
 ```rust 
+
+// Graph representation 
 struct Graph {
-    vertex: Vec<i32>,        // List of vertices
-    edges: Vec<Vec<i32>>,    // List of edges, each edge is a vector of vertex indices
+    vertex: Vec<i32>,        
+    edges: Vec<Vec<i32>>,
 }
 
 impl Graph {
@@ -78,10 +80,8 @@ impl Graph {
     fn display_matrix(&self) {
         let n = self.vertex.len();
         
-        // Initialize the adjacency matrix with zeros
         let mut matrix = vec![vec![0; n]; n];
 
-        // Fill the matrix with edges
         for edge in &self.edges {
             for i in 0..edge.len() {
                 for j in i + 1..edge.len() {
@@ -93,7 +93,6 @@ impl Graph {
             }
         }
 
-        // Display the matrix
         println!("Adjacency Matrix:");
         for row in matrix.iter() {
             println!("{:?}", row);
@@ -106,14 +105,12 @@ fn main() {
     graph.add_vertex(0).err();
     graph.add_vertex(1).err();
     graph.add_vertex(2).err();
-    graph.add_vertex(3).err();
-    
-    // Adding edges as a list of vertex indices
+    graph.add_vertex(3).err();    
+
     graph.add_edge(vec![0, 1, 2]);
     graph.add_edge(vec![0, 3]);
     graph.add_edge(vec![1, 3]);
 
-    // Display the adjacency matrix
     graph.display_matrix();
 }
 
