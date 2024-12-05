@@ -1,56 +1,66 @@
-use std::collections::{HashMap, VecDeque};
+use core::result::Result::Ok;
 
-struct Solution;
-impl Solution {
-    pub fn valid_path(n: i32, edges: Vec<Vec<i32>>, source: i32, destination: i32) -> bool {
-       
-    // Create the graph as an adjacency list
-    let mut graph: HashMap<usize, Vec<usize>> = HashMap::new();
-    for edge in 0..n {
-        graph.entry(edge[0]).or_insert(Vec::new()).push(edge[1] as usize);
-        graph.entry(edge[1] as usize).or_insert(Vec::new()).push(edge[0]as usize);
-    }
-        bfs(source as usize, &graph, destination as usize)
-    }
+struct Graph {
+    vertex: Vec<i32>,        // List of vertices
+    edges: Vec<Vec<i32>>,    // List of edges, each edge is a vector of vertex indices
 }
-    fn bfs(start: usize, graph: &HashMap<usize, Vec<usize>>, destination: usize) -> bool {
-    
-    // Initialization of the bfs
-    let mut current_path: Vec<usize> = vec![];
-    let mut visited = vec![false; graph.len()];
-    let mut queue = VecDeque::new();
 
-    visited[start] = true;
-    queue.push_back(start);
-
-    while let Some(node) = queue.pop_front() {
-        println!("Node {} {}", node, destination);
-
-        if node == destination {
-            return true
+impl Graph {
+    fn new() -> Self {
+        Graph {
+            vertex: vec![],
+            edges: vec![],
         }
-        current_path.push(node);
-        if let Some(edges) = graph.get(&node) {
-            for &neighbor in edges {
-                current_path.push(neighbor);
-                if !visited[neighbor] {
-                    visited[neighbor] = true;
-                    queue.push_back(neighbor);
-                    }
+    }
+
+    fn add_vertex(&mut self, v: i32) -> Result<(), &str> {
+        self.vertex.push(v);
+        Ok(())
+    }
+
+    fn add_edge(&mut self, e: Vec<i32>) {
+        self.edges.push(e);    
+    }
+
+    // Method to create and display the adjacency matrix
+    fn display_matrix(&self) {
+        let n = self.vertex.len();
+        
+        // Initialize the adjacency matrix with zeros
+        let mut matrix = vec![vec![0; n]; n];
+
+        // Fill the matrix with edges
+        for edge in &self.edges {
+            for i in 0..edge.len() {
+                for j in i + 1..edge.len() {
+                    let u = edge[i] as usize;
+                    let v = edge[j] as usize;
+                    matrix[u][v] = 1;
+                   matrix[v][u] = 1; // Remove for undirected graph
                 }
             }
         }
-        println!("current path {:?}", current_path);
 
-    return false
+        // Display the matrix
+        println!("Adjacency Matrix:");
+        for row in matrix.iter() {
+            println!("{:?}", row);
+        }
     }
-
-fn main() {
-    // let res = Solution::valid_path(3,vec![vec![0,1],vec![1,2],vec![2,0]], 0, 2);
-    // println!("res {}", res);
-
-    // Solution::valid_path(6, vec![vec![0,1],vec![0,2],vec![3,5],vec![5,4],vec![4,3]],  0, 5);
-
-    Solution::valid_path(5, vec![vec![0,4]], 0, 4);
 }
 
+fn main() {
+    let mut graph = Graph::new();
+    graph.add_vertex(0).err();
+    graph.add_vertex(1).err();
+    graph.add_vertex(2).err();
+    graph.add_vertex(3).err();
+    
+    // Adding edges as a list of vertex indices
+    graph.add_edge(vec![0, 1, 2]);
+    graph.add_edge(vec![0, 3]);
+    graph.add_edge(vec![1, 3]);
+
+    // Display the adjacency matrix
+    graph.display_matrix();
+}

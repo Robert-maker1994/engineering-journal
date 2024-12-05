@@ -31,7 +31,7 @@ Delete:
 
 ## A basic Hash table in rust. 
 Documentation for a hash map in rust. [HashMap](https://doc.rust-lang.org/std/collections/struct.HashMap.html)
-```
+```rust
     //initialize with a capacity of 10
     let mut hash = HashMap::with_capacity(10);
     

@@ -46,7 +46,8 @@ Characteristics of a linear data structure?
 
 ## Implementing 
 Implementing a queue in javascript would have to implement the queue using an array. For example in other languages are already built into the lang. [VecDeque](https://doc.rust-lang.org/std/collections/struct.VecDeque.html)
-```
+
+```rust
 class Queue {
   constructor() {
     this.items = [];
