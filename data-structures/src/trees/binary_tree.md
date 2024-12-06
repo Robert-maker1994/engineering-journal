@@ -55,6 +55,21 @@ A different type of tree, A binary tree is a hierarchical data structure where e
    3   7  12  
 
 ```
+
+
+### 4. Unbalanced Binary Tree 
+- The oppersite of a Balanced Tree if the left and right has a difference of above one. It would be an unbalanced tree
+- Ensures efficient operations like searching.
+```markdown
+        10
+      /    \
+     5      15
+    / \    
+   3   7  
+  /
+ 4
+```
+
 ### 5. Binary Search Tree (BST)
 - For every node:
     - All values in the left subtree are less than the node's value.
