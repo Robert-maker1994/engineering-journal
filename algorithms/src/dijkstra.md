@@ -1,51 +1,56 @@
-use std::collections::{BinaryHeap, HashMap, HashSet};
-use std::cmp::Ordering;
-use std::usize;
+# Dijkstra’s Algorithm
 
-#[derive(Debug)]
-struct Graph {
-    edges: HashMap<usize, Vec<(usize, u32)>>, // Node -> (Neighbor, Weight)
-}
+##
 
-impl Graph {
-    fn new() -> Self {
-        Graph {
-            edges: HashMap::new(),
-        }
-    }
+```rust 
+# 
+#use std::collections::{BinaryHeap, HashMap, HashSet};
+#use std::cmp::Ordering;
+#use std::usize;
 
-    fn add_edge(&mut self, from: usize, to: usize, weight: u32) {
-        self.edges.entry(from).or_insert_with(Vec::new).push((to, weight));
-        // self.edges.entry(to).or_insert_with(Vec::new).push((from, weight)); // For undirected graph
-    }
-
-    fn print(self) {
-        let l = self.edges.len();
-        for (key, value) in self.edges.iter() {
-            println!("[{}]: v {:?} ", key, value);
-
-        }
-    }
-}
+#struct Graph {
+#    edges: HashMap<usize, Vec<(usize, u32)>>, // Node -> (Neighbor, Weight)
+#}
+#
+#impl Graph {
+#    fn new() -> Self {
+#        Graph {
+#            edges: HashMap::new(),
+#        }
+#    }
+#
+#    fn add_edge(&mut self, from: usize, to: usize, weight: u32) {
+#        self.edges.entry(from).or_insert_with(Vec::new).push((to, weight));
+#        // self.edges.entry(to).or_insert_with(Vec::new).push((from, weight)); // For undirected graph
+#    }
+#
+#    fn print(self) {
+#        let l = self.edges.len();
+#        for (key, value) in self.edges.iter() {
+#            println!("[{}]: v {:?} ", key, value);
+#
+#        }
+#    }
+#}
 
 #[derive(Eq, PartialEq)]
-struct Node {
-    distance: u32,
-    index: usize,
-}
-
-impl Ord for Node {
-    fn cmp(&self, other: &Self) -> Ordering {
-        other.distance.cmp(&self.distance) // Reverse the order for min-heap
-    }
-}
-
-impl PartialOrd for Node {
-    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        Some(self.cmp(other))
-    }
-}
-
+#struct Node {
+#    distance: u32,
+#    index: usize,
+#}
+#
+#impl Ord for Node {
+#    fn cmp(&self, other: &Self) -> Ordering {
+#        other.distance.cmp(&self.distance) // Reverse the order for min-heap
+#    }
+#}
+#
+#impl PartialOrd for Node {
+#    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+#        Some(self.cmp(other))
+#    }
+#}
+# 
 fn dijkstra(graph: &Graph, start: usize) -> HashMap<usize, u32> {
     let mut dist = HashMap::new();
     let mut pq = BinaryHeap::new();
@@ -85,11 +90,9 @@ fn dijkstra(graph: &Graph, start: usize) -> HashMap<usize, u32> {
     dist
 }
 
-
 fn main() {
     let mut graph = Graph::new();
 
-    // Adding edges: (node1, node2, weight)
     graph.add_edge(0, 1, 1);
     graph.add_edge(0, 2, 4);
     graph.add_edge(1, 2, 2);
@@ -104,3 +107,5 @@ fn main() {
         println!("Distance from {} to {}: {}", start_node, node, dist);
     }
 }
+
+```

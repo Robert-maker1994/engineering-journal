@@ -1,7 +1,7 @@
 [book]
 title = "Algorithms"
 authors = ["Robert Lawson, a little bit of the internet"]
-description = "A book to explain about data structures and algorithms"
+description = "A book to explain about algorithms"
 text-direction = "ltr"
 language = "en"
 multilingual = false
@@ -10,7 +10,7 @@ multilingual = false
 edition = "2015"
 
 [build]
-build-dir = "s-and-a"
+build-dir = "book"
 create-missing = false
 
 [preprocessor.generate-summary]
