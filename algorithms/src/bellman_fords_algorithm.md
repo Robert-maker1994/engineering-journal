@@ -1,3 +1,7 @@
+# Bellman Fords Algorithm.
+The Bellman-Ford algorithm is a graph search algorithm that finds the shortest path from a single source vertex to all other vertices in a weighted directed graph. It is an extension of  [Dijkstra's Algorithm](./dijkstra.md) Dijkstra’s algorithm, capable of handling graphs with negative-weight edges and detecting negative cycles.
+
+```rust
 /// Structure to represent a weighted edge in the graph
 struct Edge {
     source: usize,
@@ -83,3 +87,4 @@ fn main() {
         }
     }
 }
+```
