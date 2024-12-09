@@ -19,6 +19,14 @@ Graphs are used in a loads of different problems and applications all over the i
     - **Connected Graphs**: There is a path between any pair of vertices. 
     - **Disconnected Graphs**: Least one pair of vertices without a path between them.
 
+
+## Difference between a weighted and unweighted graph. 
+
+- **Weighted graph**: The edges are labeled with their corresponding weights, allowing algorithms to take these weights into account when performing operations like finding the shortest path, minimum spanning tree, or maximum flow.
+
+- **Unweighted Graph**: An unweighted graph, also known as an ordinary graph, is a graph where each edge is simply present or absent, without any numerical weight or cost associated with it. Unweighted graphs are used to model relationships that are either present or absent, without considering the magnitude or strength of the connection.
+
+
 ## How do you represent a graph as a data structure?
 
 1. **The adjacency Matrix**
