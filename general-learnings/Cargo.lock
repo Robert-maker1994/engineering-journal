@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "python"
+name = "general-learnings"
 version = "0.1.0"
