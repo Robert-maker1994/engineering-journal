@@ -43,7 +43,7 @@ impl Graph {
                     }
                 }
             }
-        }
+        } 
 
         // Check for negative-weight cycles
         for edge in &self.edges {
@@ -54,6 +54,7 @@ impl Graph {
                 }
             }
         }
+
 
         distance
     }
