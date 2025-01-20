@@ -1,4 +1,4 @@
-[*Maxium sum of distinct SubArrays with Length k*](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/)
+[*Longest Common Prefix*](https://leetcode.com/problems/longest-common-prefix/solutions/3493266/alphabetise-and-compare-98-speed/)
 
 
 # Solution 
