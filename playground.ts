@@ -1,13 +1,21 @@
-function longestCommonPrefix(strs: string[]): string {
-    let prefix =  strs[0]; 
+function maxScore(s: string): number {
+    let maxScore = 0;
+    for (let i = 0; i < s.length; i++) {
+        const left = s.slice(0, i + 1).split('').filter(char => char === '0');
+        const right = s.slice(i, s.length).split('').filter(char => char === '1');
+
+        console.log( right, left, i, s.length);
+
+        if(left.length  || right.length ) {
+            
+        const currentScore = left.length + right.length;
     
-    for (let i = 1; i < strs.length; i++) {
-        while (strs[i].indexOf(prefix) !== 0) {
-            prefix = prefix.substring(0, prefix.length - 1);
-            if (prefix === "") return ""; // No common prefix
-        }
+        if (currentScore > maxScore) {
+            maxScore = currentScore;
+        }       
+        }   
     }
-    return prefix
+    return maxScore
 };
 
-longestCommonPrefix(["flower", "flow", "flight"])
+console.log(maxScore("1111"))
